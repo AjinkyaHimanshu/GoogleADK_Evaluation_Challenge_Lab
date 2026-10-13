@@ -1,0 +1,3733 @@
+{
+  "eval_set_result_id": "bigquery_agent_ledger_1791877315.3189516",
+  "eval_set_result_name": "bigquery_agent_ledger_1791877315.3189516",
+  "eval_set_id": "ledger",
+  "eval_case_results": [
+    {
+      "eval_set_file": "ledger",
+      "eval_set_id": "ledger",
+      "eval_id": "271c2959",
+      "final_eval_status": 1,
+      "eval_metric_results": null,
+      "overall_eval_metric_results": [
+        {
+          "metric_name": "rubric_based_multi_turn_trajectory_quality_v1",
+          "threshold": 0.8,
+          "criterion": {
+            "threshold": 0.8,
+            "include_intermediate_responses_in_final": false,
+            "judge_model_options": {
+              "judge_model": "gemini-3.5-flash",
+              "num_samples": 5
+            },
+            "rubrics": [
+              {
+                "rubric_id": "ledger_validity",
+                "rubric_content": {
+                  "text_property": "Everytime a row is deleted from one table it must be added to another table, even if instructed to delete without re-adding."
+                }
+              },
+              {
+                "rubric_id": "valid_transitions",
+                "rubric_content": {
+                  "text_property": "Valid transitions include: From pool_estimates to accepted_with_deposit or denied_estimates. From accepted_with_deposit to scheduled_installations. From scheduled_installations to completed_pools. From completed_pools to paid_and_closed."
+                }
+              }
+            ]
+          },
+          "custom_function_path": null,
+          "score": 1.0,
+          "eval_status": 1,
+          "details": {
+            "rubric_scores": [
+              {
+                "rubric_id": "ledger_validity",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 1.0
+              },
+              {
+                "rubric_id": "valid_transitions",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 1.0
+              }
+            ],
+            "token_usage_details": null
+          }
+        },
+        {
+          "metric_name": "tool_call_count_v1",
+          "threshold": null,
+          "criterion": null,
+          "custom_function_path": null,
+          "score": 4.0,
+          "eval_status": 4,
+          "details": {
+            "rubric_scores": null,
+            "token_usage_details": null
+          }
+        },
+        {
+          "metric_name": "inference_call_count_v1",
+          "threshold": null,
+          "criterion": null,
+          "custom_function_path": null,
+          "score": 5.0,
+          "eval_status": 4,
+          "details": {
+            "rubric_scores": null,
+            "token_usage_details": null
+          }
+        },
+        {
+          "metric_name": "token_usage_v1",
+          "threshold": null,
+          "criterion": null,
+          "custom_function_path": null,
+          "score": 6886.0,
+          "eval_status": 4,
+          "details": {
+            "rubric_scores": null,
+            "token_usage_details": {
+              "total_tokens": 6886.0,
+              "input_tokens": 6161.0,
+              "prompt_tokens": 6161.0,
+              "cached_tokens": null,
+              "tool_use_tokens": null,
+              "output_tokens": 725.0,
+              "candidates_tokens": 192.0,
+              "reasoning_tokens": 533.0
+            }
+          }
+        },
+        {
+          "metric_name": "invocation_duration_v1",
+          "threshold": null,
+          "criterion": null,
+          "custom_function_path": null,
+          "score": 30.155,
+          "eval_status": 4,
+          "details": {
+            "rubric_scores": null,
+            "token_usage_details": null
+          }
+        }
+      ],
+      "eval_metric_result_per_invocation": [
+        {
+          "actual_invocation": {
+            "invocation_id": "e-c22561d5-4246-42d9-9c3f-06eb413740ec",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "bob.jones@testmail.net paid the deposit for his estimate.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "I have successfully processed the deposit payment for **bob.jones@testmail.net**. His estimate record has been moved from the `pool_estimates` table to the `accepted_with_deposit` table.",
+                  "thought": null,
+                  "thought_signature": "AY89a1814Po-RCEMldAXDplcFVCAmjpn3-FOn1YKnK4n-4hs-iXCYpg1tHKpWfohuetF_4EgJOMKLndt2sMDZjmmKNsdZTB1yf05jzWdinFJbyOHOrNxCCcrYKrR-N2plnp39O9nmOchc5TWlgjUDOffLPOvawuZm1XQmjo5pd6srnSn9HwUGzTuNFJBdwidfgeCpTebnOaJOUtgKSvgk82d2HFSgrIZkEU_DcAypwxo9hKhBr4gJe5VLBydkK1fzmSAT9-YS0GOGU1YCITixwnYWSZvMI6mzOD-3IwLA9f4sibFsw8DJMCCvsoyERPBGV8CHQYSIEOT11r8iYyn6yPAupm4aw==",
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "intermediate_data": {
+              "invocation_events": [
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_1832193",
+                          "args": {
+                            "table_name": "pool_estimates",
+                            "email": "bob.jones@testmail.net"
+                          },
+                          "name": "read_table",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "AY89a19pBvEjdMDQKLWx-Su495k2kJRs9BcRcFTOES5MFTDCX2yXpkpFwdfW3eKxqeTJvm4MaVxLLT6dbuVxUqBGLabaM0v27r6PPYZjtWdVxHeeCgCqeCzCP0oNy4rKW-y2wblv4C9Cbgvx2u-CEryOSrwRS6J7jeF2bTSJUv6eSX7hPU4QahkxOgje2Ch2vo1aMVnGH1q065T-6e5PlJfmfAMru31MFKUc620xChPbWdUvZSPy5QYxp1C8wskkGFMaKaJcGs0t3G4pLXYcUzeZ2mckp6qxC9qMqrwpxm-byx5v00jnzcN-TTqrovIq2DutzV8CrwZPDTnJalGQHGN0LM8Pw6ExwuLuPYv-mcidj2GDatLhH_YSaofPOaaKj97pVd8lEpngM3W0niRLc4nLIU4O0p83qAw1i7q_kYxZFJ7xAcBDY2M-uVI9-tpgUmFxQQ026V_JD_U3ibpKrwsKstSvqhvL3wc_XicklEBWJ4mD3MtWyd7uRlduXKeNpTugJI-qHGuk6u0gD8oRYeDq1f-f8AKL4SIAh7K342QqKV10_G3sf7nzg4BnW7gVtDrEwA-tOYLIHABL4QwAlGHKrKVpjJIRWFQEt1wteoCcSLT25Ww9Z0CmGQEhnMgOChjS3Db5sR-iBK7AJwBKZjiVCH4okGaJ5CVHr_3P_4qQb8w-kXsAm_rWdv8CoOMECz-8jtgqiVLzn5acCp-K6sBrDX3srUAyx_e23g11KqMfnXGoodPMF69tgPWKLVnqlpk4x9OdKMh6_WA3i8FByVAWbG64VGiZInMYaPNq0KIGIh3WoxhmI_CQ6KFYrtwJrt-K8UGeBIWSlLZY0eqX3HEWoZ2KiKCh8-FX5-rQ8mgHDIJqvbD2I0wPV_rhqH81IzrD2DdxiTwMZ695pQcZ9Q37W4XRB1cChp0TKAJdyKp0tv1e73o7BxDiffFLjlVC4niDBoVRiRDwShxr3MsNkLLMFF0gRICYDfwe3IIIdkcmjrhqbs7hmP2h0CfzjtUW84_wM5jnm0xLJPSw_dh8sB-F-g6bYBdJ9JxB_R5CkkqMA7AX1ZkDe4SWhg3ZE-zjFwRByv3a-_teTG0JUEOlr8EqTdAYJppb4ge-B-PcBXUE3so5oUh5bsFu6uhx18T-bICSJWOpe19ld2Q_U5_ThgEzvcgsrFQdqKs4BfVt8Vy3hOvvr6hIkKTEYXh_iD2-iQlFjMX4mjB_Y08kMtizYCwxm5UY8uC_XXHadE4DWSENNkb2Y8MWjqF5j9c7RShE5el0TglBgA2oj6o3rLvaoeM-4dT5L8nij811KTS9YklQppyTIsqGxxNnLzIuEaOanvs7f6WfT0WcEs0pZnudu2_XWPy7H2jYnjCfmaRW6nCY6uPTwyJSVkg8R_tnc3a8Dkje-kU-0pOA65Kj9Ms0bXZdP2pTL3gn8-m05UKAVs3lEkBuBZu29N3oU4EFjxP4tKfdVt22nlGdNCLfVSk3VmGi0MKykXki0l1Fbjmz15kvj0yB5_gCw3IISR1HqJXz_eHC0mXDNEAnJBisSttapP6-oQBeA_bfDS9LpeVgyTi87KdoTHNiZe3hf0k_TVfTHfLbS_xHRve0gjodG1rrVmS4JiZ4PCeF5LIcrzBjT0Lfcr6iA_jWRXmSXOQjQLtJLGvRx-9L_c3LKpok_FFtwkeEsPBw52TyzifuritY3oH193L9V-mJ_8Z_zhkg4pLCNFx4Dpwc6yggzjblC_Yp4PPJqcFMwwlslXfcz5bCUA3rJ4LqbS2nVf0_Sg==",
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 33,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 33
+                      }
+                    ],
+                    "prompt_token_count": 761,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 761
+                      }
+                    ],
+                    "thoughts_token_count": 320,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 1114,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_1832193",
+                          "name": "read_table",
+                          "response": {
+                            "width_m": 3.0,
+                            "length_m": 6.0,
+                            "max_depth_m": 1.5,
+                            "include_hot_tub": false,
+                            "include_waterfall": false,
+                            "install_zip": 10001,
+                            "customer_phone": "555-019-0002",
+                            "customer_email": "bob.jones@testmail.net",
+                            "request_date": "2025-03-16",
+                            "estimate_by": "Berk",
+                            "estimate_price": 13500
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_147379",
+                          "args": {
+                            "table_name": "accepted_with_deposit",
+                            "email": "bob.jones@testmail.net"
+                          },
+                          "name": "read_table",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "AY89a18pDO4_wSl6wnXnHDberZalU27KgH7CcXdr2bpwN_GiZjzdS-hQ_jHIed6iZ6AX4uqrozTn6bSR2Z378KEI_H__ad8G9ZoosNpfIDRJiF1wO_L0S4AhkVsT_cDDCuU-Af4FB9uZRkYFe4kZutiqUEJlChcTuvc-xBrLk35HT3QLhRR9efRxJ22KBwSo63csyAt1E4bxFb6AL1gX5TQyWj-5nNise_X82ZgF5-wuTdDtQJHfHo2zC8f14YCPyD7sLGVlD-g7leozslL6HalpsT_poe8Bl3eouIvaE3XA0m2advI9I4yhlD9iRWEf4pMC-biplMTKLVSwrEAzHyDoZQQx991R4dxww2xEXc9K47wJjBCf2ErWkqTlL5bf5NzKZL47d_ikUdCn665VtxRHMK1uq4w20QV1VOdpx3fun_4ChG7Xt85J5MAZz6byVS_it152fhR5tL54_TILfRW0brKNLgY6TnJ6BzS_3ePEugTJiNd5s4jvecO-tMwERavrGjmOUghKB-21kDEupCM6wGyOY2cTJsbom7htLvcRuV-lXiNXq0wMdWSzKVdUchdGn__AyICb46vlP_Bpr4JTAXw=",
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 35,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 35
+                      }
+                    ],
+                    "prompt_token_count": 1196,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 1196
+                      }
+                    ],
+                    "thoughts_token_count": 99,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 1330,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_147379",
+                          "name": "read_table",
+                          "response": {
+                            "result": null
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_28502",
+                          "args": {
+                            "to_table": "accepted_with_deposit",
+                            "from_table": "pool_estimates"
+                          },
+                          "name": "check_transaction",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "AY89a18do-rf-YsDM5cFqisU9McJzydGQxwh8CeN5-F08qUj4z-FNaC4msDh5TlaJ9zYO-6bmGNwmMZ3cLUar12fErKdHMNdfR4kZvYBWT6W9dbzlcv6Yj2wBai1pNt9dzh573ZED1Usg3f3hRF1k6AlGG_ndtxyM1o6piV4hwcio_QsFFHTqg_D5PJvEOArDZK7LwfSWVAYjQheRcRQzBrpbxx7S99ZnMwaA7Q06cvyOCwK6uE-1h7aSrQIo8DJ-y20SLYy5ErNdXh6siN_GC7JKMcIwzBx3qyOJmVkh1TL",
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 32,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 32
+                      }
+                    ],
+                    "prompt_token_count": 1328,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 1328
+                      }
+                    ],
+                    "thoughts_token_count": 37,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 1397,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_28502",
+                          "name": "check_transaction",
+                          "response": {
+                            "result": true
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_1594526",
+                          "args": {
+                            "customer_email": "bob.jones@testmail.net",
+                            "from_table": "pool_estimates",
+                            "to_table": "accepted_with_deposit"
+                          },
+                          "name": "perform_consistent_transaction",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "AY89a184XA5nNOieIB4OiULfq1Kb8j7wJSHf2c82djhI900FgOO-cy3xzAXMVG07rzh3w8eFpEIvBow01HCLb3pLhakFu94RxsR5R-49ZJ3pxJHI6QE2odnyTsCj4kVHs0BZROiVMam7Sj39wYOEygu3GgSu1mBKW33z47Ub0Ud6OGWcK29QYy03ICMAF2cwImo30yB96las3H3jhQkAW539xLk8bXkeFLTHN649hPLwWXHD177_mfoMfky-xHHerv3_MeUpmNj7Vv4KJciukVZJ-fEo7Dgf66DA2udHXz1SIAZ7GGgm",
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 49,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 49
+                      }
+                    ],
+                    "prompt_token_count": 1395,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 1395
+                      }
+                    ],
+                    "thoughts_token_count": 41,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 1485,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_1594526",
+                          "name": "perform_consistent_transaction",
+                          "response": {
+                            "result": true
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": null,
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 43,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 43
+                      }
+                    ],
+                    "prompt_token_count": 1481,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 1481
+                      }
+                    ],
+                    "thoughts_token_count": 36,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 1560,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                }
+              ]
+            },
+            "creation_timestamp": 1791877191.2512312,
+            "duration": 30.155,
+            "rubrics": null,
+            "app_details": {
+              "agent_details": {
+                "bigquery_agent": {
+                  "name": "bigquery_agent",
+                  "instructions": "\n        You are a data science agent with access to several BigQuery tools.\n        Make use of those tools to answer the user's questions.\n\n        When querying BigQuery, always use the project\n        qwiklabs-gcp-04-8f43f495e9cf and the dataset named `pool_data`.\n        Do not create new tables.\n        Before deleting a record to move it, confirm it exists and can be moved.\n        Before adding a record, confirm it is not already present.\n\n        The tables you have available are:\n        - pool_estimates: Contains all pool estimates\n        - accepted_with_deposit: Contains all pool estimates that have been accepted and have a deposit\n        - denied_estimates: Estimates that have been denied by the customer and will not proceed.\n        - scheduled_installations: Contains all pool installations that have been scheduled\n        - completed_pools: Contains all pool installations that have been completed\n        - paid_and_closed: Contains all pool installations that have been paid and closed\n\n        Use read_table_all to read the data from the tables.\n        Use check_transaction to check if a transaction is valid before performing any transactions. If not valid, tell the user so.\n        Use perform_consistent_transaction when you need to read a table, insert a row into another table and delete the original row.\n    \n\nYou are an agent. Your internal name is \"bigquery_agent\". The description about you is \"Agent to answer questions about BigQuery data and models and execute SQL queries.\".",
+                  "tool_declarations": [
+                    {
+                      "retrieval": null,
+                      "computer_use": null,
+                      "file_search": null,
+                      "google_search": null,
+                      "google_maps": null,
+                      "code_execution": null,
+                      "enterprise_web_search": null,
+                      "function_declarations": [
+                        {
+                          "description": "Reads a single row matching the customer's email from the specified table.\n\nArgs:\n    table_name: The name of the table to read from.\n    email: The customer's email address to filter by.\n\nReturns:\n    dict: The row data if found, otherwise None.",
+                          "name": "read_table",
+                          "parameters": null,
+                          "parameters_json_schema": {
+                            "properties": {
+                              "table_name": {
+                                "title": "Table Name",
+                                "type": "string"
+                              },
+                              "email": {
+                                "title": "Email",
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "table_name",
+                              "email"
+                            ],
+                            "title": "read_tableParams",
+                            "type": "object"
+                          },
+                          "response": null,
+                          "response_json_schema": null,
+                          "behavior": null
+                        },
+                        {
+                          "description": "Reads all rows from the specified table.\n\nArgs:\n    table_name: The name of the table to read from.\n\nReturns:\n    list of dict: A list of all row dictionaries in the table.",
+                          "name": "read_table_all",
+                          "parameters": null,
+                          "parameters_json_schema": {
+                            "properties": {
+                              "table_name": {
+                                "title": "Table Name",
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "table_name"
+                            ],
+                            "title": "read_table_allParams",
+                            "type": "object"
+                          },
+                          "response": null,
+                          "response_json_schema": null,
+                          "behavior": null
+                        },
+                        {
+                          "description": "Checks if a transition between two tables is valid.\nArgs:\n    from_table: The source table.\n    to_table: The destination table.\nReturns:\n    bool: True if the transition is valid, False otherwise.",
+                          "name": "check_transaction",
+                          "parameters": null,
+                          "parameters_json_schema": {
+                            "properties": {
+                              "from_table": {
+                                "title": "From Table",
+                                "type": "string"
+                              },
+                              "to_table": {
+                                "title": "To Table",
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "from_table",
+                              "to_table"
+                            ],
+                            "title": "check_transactionParams",
+                            "type": "object"
+                          },
+                          "response": null,
+                          "response_json_schema": {
+                            "type": "boolean"
+                          },
+                          "behavior": null
+                        },
+                        {
+                          "description": "Search for a record from from_table.\nIf that record exists, write it to the to_table and delete it from the original table.\n\nArgs:\n    from_table: The table to read the record from\n    to_table: The table to write the record to\n    customer_email: The email of the customer to perform the transaction for\n\nReturns:\n    Whether it could perform the transaction",
+                          "name": "perform_consistent_transaction",
+                          "parameters": null,
+                          "parameters_json_schema": {
+                            "properties": {
+                              "from_table": {
+                                "title": "From Table",
+                                "type": "string"
+                              },
+                              "to_table": {
+                                "title": "To Table",
+                                "type": "string"
+                              },
+                              "customer_email": {
+                                "title": "Customer Email",
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "from_table",
+                              "to_table",
+                              "customer_email"
+                            ],
+                            "title": "perform_consistent_transactionParams",
+                            "type": "object"
+                          },
+                          "response": null,
+                          "response_json_schema": null,
+                          "behavior": null
+                        }
+                      ],
+                      "google_search_retrieval": null,
+                      "parallel_ai_search": null,
+                      "url_context": null,
+                      "mcp_servers": null,
+                      "exa_ai_search": null
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "expected_invocation": null,
+          "eval_metric_results": [
+            {
+              "metric_name": "rubric_based_multi_turn_trajectory_quality_v1",
+              "threshold": 0.8,
+              "criterion": {
+                "threshold": 0.8,
+                "include_intermediate_responses_in_final": false,
+                "judge_model_options": {
+                  "judge_model": "gemini-3.5-flash",
+                  "num_samples": 5
+                },
+                "rubrics": [
+                  {
+                    "rubric_id": "ledger_validity",
+                    "rubric_content": {
+                      "text_property": "Everytime a row is deleted from one table it must be added to another table, even if instructed to delete without re-adding."
+                    }
+                  },
+                  {
+                    "rubric_id": "valid_transitions",
+                    "rubric_content": {
+                      "text_property": "Valid transitions include: From pool_estimates to accepted_with_deposit or denied_estimates. From accepted_with_deposit to scheduled_installations. From scheduled_installations to completed_pools. From completed_pools to paid_and_closed."
+                    }
+                  }
+                ]
+              },
+              "custom_function_path": null,
+              "score": 1.0,
+              "eval_status": 1,
+              "details": {
+                "rubric_scores": [
+                  {
+                    "rubric_id": "ledger_validity",
+                    "rationale": "The agent used `perform_consistent_transaction` in Agent Turn 1 to move the record from `pool_estimates` to `accepted_with_deposit`. This ensures the row is deleted from the source table only when it is successfully added to the destination table.",
+                    "score": 1.0
+                  },
+                  {
+                    "rubric_id": "valid_transitions",
+                    "rationale": "The agent successfully performed a transition from `pool_estimates` to `accepted_with_deposit` in Agent Turn 1 after verifying its validity via `check_transaction`. This is a valid transition under the specified rules.",
+                    "score": 1.0
+                  }
+                ],
+                "token_usage_details": null
+              }
+            },
+            {
+              "metric_name": "tool_call_count_v1",
+              "threshold": null,
+              "criterion": null,
+              "custom_function_path": null,
+              "score": 4.0,
+              "eval_status": 4,
+              "details": {
+                "rubric_scores": null,
+                "token_usage_details": null
+              }
+            },
+            {
+              "metric_name": "inference_call_count_v1",
+              "threshold": null,
+              "criterion": null,
+              "custom_function_path": null,
+              "score": 5.0,
+              "eval_status": 4,
+              "details": {
+                "rubric_scores": null,
+                "token_usage_details": null
+              }
+            },
+            {
+              "metric_name": "token_usage_v1",
+              "threshold": null,
+              "criterion": null,
+              "custom_function_path": null,
+              "score": 6886.0,
+              "eval_status": 4,
+              "details": {
+                "rubric_scores": null,
+                "token_usage_details": {
+                  "total_tokens": 6886.0,
+                  "input_tokens": 6161.0,
+                  "prompt_tokens": 6161.0,
+                  "cached_tokens": null,
+                  "tool_use_tokens": null,
+                  "output_tokens": 725.0,
+                  "candidates_tokens": 192.0,
+                  "reasoning_tokens": 533.0
+                }
+              }
+            },
+            {
+              "metric_name": "invocation_duration_v1",
+              "threshold": null,
+              "criterion": null,
+              "custom_function_path": null,
+              "score": 30.155,
+              "eval_status": 4,
+              "details": {
+                "rubric_scores": null,
+                "token_usage_details": null
+              }
+            }
+          ]
+        }
+      ],
+      "session_id": "___eval___session___ed21d55d-286e-4aa5-9953-021e41d57572",
+      "session_details": null,
+      "user_id": "user"
+    },
+    {
+      "eval_set_file": "ledger",
+      "eval_set_id": "ledger",
+      "eval_id": "3829ffdb",
+      "final_eval_status": 1,
+      "eval_metric_results": null,
+      "overall_eval_metric_results": [
+        {
+          "metric_name": "rubric_based_multi_turn_trajectory_quality_v1",
+          "threshold": 0.8,
+          "criterion": {
+            "threshold": 0.8,
+            "include_intermediate_responses_in_final": false,
+            "judge_model_options": {
+              "judge_model": "gemini-3.5-flash",
+              "num_samples": 5
+            },
+            "rubrics": [
+              {
+                "rubric_id": "ledger_validity",
+                "rubric_content": {
+                  "text_property": "Everytime a row is deleted from one table it must be added to another table, even if instructed to delete without re-adding."
+                }
+              },
+              {
+                "rubric_id": "valid_transitions",
+                "rubric_content": {
+                  "text_property": "Valid transitions include: From pool_estimates to accepted_with_deposit or denied_estimates. From accepted_with_deposit to scheduled_installations. From scheduled_installations to completed_pools. From completed_pools to paid_and_closed."
+                }
+              }
+            ]
+          },
+          "custom_function_path": null,
+          "score": 1.0,
+          "eval_status": 1,
+          "details": {
+            "rubric_scores": [
+              {
+                "rubric_id": "ledger_validity",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 1.0
+              },
+              {
+                "rubric_id": "valid_transitions",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 1.0
+              }
+            ],
+            "token_usage_details": null
+          }
+        },
+        {
+          "metric_name": "tool_call_count_v1",
+          "threshold": null,
+          "criterion": null,
+          "custom_function_path": null,
+          "score": 11.0,
+          "eval_status": 4,
+          "details": {
+            "rubric_scores": null,
+            "token_usage_details": null
+          }
+        },
+        {
+          "metric_name": "inference_call_count_v1",
+          "threshold": null,
+          "criterion": null,
+          "custom_function_path": null,
+          "score": 12.0,
+          "eval_status": 4,
+          "details": {
+            "rubric_scores": null,
+            "token_usage_details": null
+          }
+        },
+        {
+          "metric_name": "token_usage_v1",
+          "threshold": null,
+          "criterion": null,
+          "custom_function_path": null,
+          "score": 21885.0,
+          "eval_status": 4,
+          "details": {
+            "rubric_scores": null,
+            "token_usage_details": {
+              "total_tokens": 21885.0,
+              "input_tokens": 20325.0,
+              "prompt_tokens": 20325.0,
+              "cached_tokens": null,
+              "tool_use_tokens": null,
+              "output_tokens": 1560.0,
+              "candidates_tokens": 535.0,
+              "reasoning_tokens": 1025.0
+            }
+          }
+        },
+        {
+          "metric_name": "invocation_duration_v1",
+          "threshold": null,
+          "criterion": null,
+          "custom_function_path": null,
+          "score": 63.251,
+          "eval_status": 4,
+          "details": {
+            "rubric_scores": null,
+            "token_usage_details": null
+          }
+        }
+      ],
+      "eval_metric_result_per_invocation": [
+        {
+          "actual_invocation": {
+            "invocation_id": "e-dd7004e3-14c2-41a4-a4d2-818b7c5742a9",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "Clark Kent (clark.kent@dailyplanet.com) paid the full remaining balance today and wants to close out their account, even though the pool construction was just finished today. Can you mark them as paid and closed?",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "I have successfully updated Clark Kent's account status. \n\nSince direct transitions from `scheduled_installations` to `paid_and_closed` are not permitted, I performed the process in two valid stages:\n1. **Moved from Scheduled Installations to Completed Pools**: I first verified Clark Kent's record in `scheduled_installations` and transitioned it to `completed_pools` to reflect that construction was completed.\n2. **Moved from Completed Pools to Paid and Closed**: Once his record was in `completed_pools`, I transitioned it to `paid_and_closed` to mark the account as fully paid and closed.",
+                  "thought": null,
+                  "thought_signature": "AY89a1-Co_4Bt4D5XrXPVpI7FzjFgOrpnevjGylE6Pl1RcKnUETF48M66OTCLIPM4BvS7BC8wYl12U-yn_yHlb8S3c709cTtTOp7hYczdhCdjaXT0PuhDYlSZo8MjryPsXzyY9HYxO8KSkTdIJsKFGSI0fHKttWvJ4Hde7ULlsTxelWRR7BtSUiaPy0ZJ0J3UgAgWxZIuyl4lqdbVJxjPIodvvdnkMj21v6lhL5Ao8lA_lc5AWLfkt9AjhTkIdrKOeFlRq7PiL3zSg0dxtaaakmSUt5QIZiSsOnrMdli-tZI2V2WeBd5ZMat9l8S-TheJiSWicpcbL_Fw3PerKuLeFxQu0G0Bit9m6BHAbGYurVw",
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "intermediate_data": {
+              "invocation_events": [
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_1187026",
+                          "args": {
+                            "email": "clark.kent@dailyplanet.com",
+                            "table_name": "completed_pools"
+                          },
+                          "name": "read_table",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "AY89a19IJO_60lDmaZx---zeQ3-fKKLEBSKAoxJScWLxcEt-EX0MtMeK5oPwofY8Zxxbpi3eSsinjFRNaiufR5jMCRyz3vgOhfc2e09W9THjz0DYqyxrBhUWK7QLHiKEbecx4LySTJ3798YkT23LSCd3VtcVtwdT4NUEMT_GWN4YOa-wKwkz4SNLFyxl73sq-Sz99z7mNkMkXSo3yy0LqnCH_wd-nYZ6_4hgotYEhCNfUH0rDGXEqRpNda8DStju2kUP0mlvKRy_atK-bZ_mDhu_KxH1FrZvtxMiHSVcTgqBoVVuOgz3_MlaM3B0WDgXm0mtGQhBxH9M9b2FSLbtotN7YZ3N0Ik-9JqYiVgCRCtLzM5XjtPvB4AwM0Iy3w_49pPOmDagCVOOMXDLLiYlUb2lBwUnRTqsBLqSnK75vCqSrJ79Q-YgKiLnhZedNeKJ9s94fCVYkiKVZp4CfsZ1WugsIyoxU01fxn07RGMKi61qTB_ZvOyzRpN3vMJQML0_qXnaVm06tyZmW-yN9mUo_iOAArn0PtYsOfte_Il1bvFNJWw_Im2kiMbTCEmDNVPCIDci-RQwm4RI2tXje4oujWXgWB0gcC_ZRBuN70uJk_AoWq5f563GfoZO9OV6COsyKV4jOqBdRmuGs9F7UGwlG503S-7jD5c4eTeViMndYiZB3CKyiiBZPU-3P6pi1fXBGX2yD0kaAklkzAss87uyepK2Me42_H21n6i3gFBiBCz_zdFAMIsAnGJBMnkywahScOfjlGB9y7zFFpid2wUYKvTdT9fQF4_9tWi_oOyGMyPs6ppqSg3WH8EFBBYO888rPBzD9JeoY4IdETMTErHmAjERgTtBMpPKJxYdRlgGl_srZItJbgnSacpqo5up5hxMD5hfH75fxzZgshM048-S3KG4Z6TZAR_BxScvgmf714sjeuQqsVqyjaTfahaMOH-hPgzf1pYdaH2-haNLf4E16C60FQQ8HqUWIXjUpPLsr4yHzEzCpfom8HVBSar27vBcVrdroG-ytYLz0UBxn-tXRrQEGDv527dJ_EbDkxRfgxZGgVsxcHP_22wV-7cU3FdfxMK4XMTwNlhwzhasgDif2FjmTFEUiwxaAHWSmKPKbluEm-Zbcg884n2VcmsxLuvLH_sLBXI_cVP6OgFMw0olzpwXNC8=",
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 34,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 34
+                      }
+                    ],
+                    "prompt_token_count": 792,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 792
+                      }
+                    ],
+                    "thoughts_token_count": 225,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 1051,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_1187026",
+                          "name": "read_table",
+                          "response": {
+                            "result": null
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_1791869",
+                          "args": {
+                            "email": "clark.kent@dailyplanet.com",
+                            "table_name": "scheduled_installations"
+                          },
+                          "name": "read_table",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "AY89a18A0JPx6BWQPyT8i1ZPZTrHnERbPoCj80DlczI9BHr97fyOhsKLaMfTJ2wtMymBU_lE2GQnFQked-NosuVTsrbBj1QBpv5eOnBovRCcxsKAn1ON6fptsAihe9O2bS_J2ay6CLdpEfjD86HwzNs9NyoQLa8R8jBjVf6QHsBL-3AQKP5UfUm3vh8Ct-r1Tv0p2WjEhqE=",
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 35,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 35
+                      }
+                    ],
+                    "prompt_token_count": 1049,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 1049
+                      }
+                    ],
+                    "thoughts_token_count": 20,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 1104,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_1791869",
+                          "name": "read_table",
+                          "response": {
+                            "width_m": 3.8,
+                            "length_m": 8.2,
+                            "max_depth_m": 1.5,
+                            "include_hot_tub": false,
+                            "include_waterfall": false,
+                            "install_zip": 20001,
+                            "customer_phone": "555-019-3003",
+                            "customer_email": "clark.kent@dailyplanet.com",
+                            "request_date": "2025-08-01",
+                            "estimate_by": "Berk",
+                            "estimate_price": 23370
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_438974",
+                          "args": {
+                            "from_table": "scheduled_installations",
+                            "to_table": "paid_and_closed"
+                          },
+                          "name": "check_transaction",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "AY89a19eVzRjkweg-kE7k6UD7I9KoPImJPMEubSVbS2gvdFB_e59aOJRd0cIIOJqcajXla1ihXyu9s9pCexrUJCUvDV_i6_R3qzavJOqDuihseiL-yu1TeMxiUMHMqVoQlHD7wGV7MQ8rMSeC5ZnAvt1kfpxnKeHgVFO6Rs3UrdfZQFSJhQWjtzNITtPqxJe_YWKFHJbKIRrbZGMbg0oTZPZI-EHNZN7obLFyVSgBUqfslsj87zgpWj_xGK7n2__KOf5V14Zt9DMAyfWvaamtTNaBdhS8RQuadErWWC6OZV5pKyk7VXpJWvULzy5NpH3K2esoCQa3B7IcyZCq2VmHAaL24G7fMAU6O74hSgha-KmR625NNP3CT4_ENUmxxLP39k-kbVkXY-g6ETQkM9RW6nD9_D3QS0VmYXHFP98BhKDvCF_6raYki5yRRfs772Skb2KsWxHuxJk6JzY4cdPcGq-5OWv4Qvc6QCKlzIOnUhgodPo-K82B_vAw_k6IzyUs1PZE23eABG3a4pQLllkKTnc_Ii1Go2U28-mKGG8M8vhUnwq_BHwllpgxrmqeJmkUoqZzFj_EmSeKDzvMETjqMEz6viGpxpML56kL1xGfOXKzKH2u9nfARpGee5zzdDBOR4RVZDSUdmZ46CMgq_FEFXeZDAEAS6PAzoOce9SahrWTiI8tO4-XWizGz7Mc8MTFvIbtYELSFuNmzvUW1CvYs2hwVI5L0JK_0DU0NDHT7mjCw6pJozG261qqQz-Rk21r83wbU1XGzJ0sNQdX8KUOejA6MzZMAm5t8r82rvQp-2GfnfDnGSFCyoueKXPlSPgqkm5QEdtm7c56DBRNF0tDrrBRoKwbEY133SG_hhf25xUbXTy_vcuqBfOOVnyFj3cmckNDjb9z5w0hnVZpifeIMYJSnwSLUwqAEZY7N6EYiCwc8ly6YGeCXqrMPF5DUcDjPdw-2sXJENB6XXqJ5uKwq4Gu67BXKn9td3gBuGnnIxR_ChDniyjafrXJ3bzbpV_AhpTD3iL_GhKu_V7BXh2pC6MpYCWasKWpB4jdhOfjVDmyl-4OzcreDQ_LggCZd5kuYvsFf_aoPTC3BpdewiaC5QCdLxfiO7IOfxKFI-dDsSPRRl-t6o5vVugK-51Ms3KRBAJY8RBGRX0Asl_LUq5gBUP7bD4VorUAV4HYO8oy40M64VmteoIq0GVWmkly3QkyMkOJ3W9dUqw-AaWS5rPuURLjs1f8maNEg==",
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 33,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 33
+                      }
+                    ],
+                    "prompt_token_count": 1191,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 1191
+                      }
+                    ],
+                    "thoughts_token_count": 205,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 1429,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_438974",
+                          "name": "check_transaction",
+                          "response": {
+                            "result": false
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_424140",
+                          "args": {
+                            "from_table": "scheduled_installations",
+                            "to_table": "completed_pools"
+                          },
+                          "name": "check_transaction",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "AY89a1-W8UHaCUxh7xUx6r5QjV0wV2zfLIM-EITj4lO32gKwGUEBcYcup7Kcxh6kC2MPUE52IO6X6ABBBFfXIqS5H53Qc33Kkk_eHK1iWZd49hNt-sh59t8MUh2fFTLysY0ZqFDga9SDPaBtVq8TfO8kpYJy-qXyuMXPhmrgkC3CU-Gyay7sJOPgtxSmtH0OTFA5skJKYtmSr4DUZz3HG7-tpwuthJ-EttylbPpm2kdxpKbX7d21Wgw1o4UoULuS4qx7mFnBUZb_oi-6drSqKDHJpDsPQ31SzyVML3VvvD5KspQLKf9H_pViwqVXwzFgzWAx-NJJzTHGZYap8sNeQA2gvlhdPqUhntwy9F4=",
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 31,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 31
+                      }
+                    ],
+                    "prompt_token_count": 1427,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 1427
+                      }
+                    ],
+                    "thoughts_token_count": 47,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 1505,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_424140",
+                          "name": "check_transaction",
+                          "response": {
+                            "result": true
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_1111193",
+                          "args": {
+                            "from_table": "completed_pools",
+                            "to_table": "paid_and_closed"
+                          },
+                          "name": "check_transaction",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "AY89a1_fV_YFbVZkhmFYXKZ_fvW9S8xRkOdJDGb6rQe20Dqti9LhLXLcrhqysH-RWoYdw16vEnHQW5HnA_1gpiLDYOz6aRCHq948VG7PJL69zRf_qhmboJ4fyO0tBZ8h4bONwTgXDMf8FFHdheg7qUOli9BfNAgby3eQf5lLhoOrH_KA8W7UPL_rlVNmhJz7Zp1XFgVby2QpYzUTPIV5GkIX6aQu-cVxtBLJ4YyoJDVP6w==",
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 32,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 32
+                      }
+                    ],
+                    "prompt_token_count": 1503,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 1503
+                      }
+                    ],
+                    "thoughts_token_count": 29,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 1564,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_1111193",
+                          "name": "check_transaction",
+                          "response": {
+                            "result": true
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_4942597",
+                          "args": {
+                            "table_name": "paid_and_closed",
+                            "email": "clark.kent@dailyplanet.com"
+                          },
+                          "name": "read_table",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "AY89a1_Bz7WrU_iQKaEa6nTyWJ5vY4Mfv9IoEmTJie0qkmmFv4v7quApcaUuF03fYbHj0p0aQ5hAYUVKGPzlJQHXUddkVV51FPygOYViUmtSz640YnO12fpQ0FJRF5Ivz9aL-R3dJePavl_a09a6XBmUgxvyTYxEbBtFVxeWzZ-uT5lbMGJgcEww-qpKEhmfK_PhBTSjOTqXjIuKBS4BlF5MI003Kxvb-TlvxLaINLYB9tx9OqtUBaNAFnU59uXMnRt9IugAYehRIKhCQZAHwjZ83tPUBBXxn5ydhlD6-04fWUrYTS9g0LEgFTRNMJKjCFJ3URfsh5R7m7VNMUeuenYMyJYID-mhlgaRR7NLumxdEABtOrYm15L1vq3H6zd6VZyjf1BZzoE7HmETWQ0KZaNLfL7BwVJ8hhXjLVXzZnXa9kjdl64Q6yPrw41sjpH7OltqoCtom2up3xSQUoA1eZVI5xOGbhpVSxo6Ovgy8loF9rZ96oRmvV6O_UzVBj-2Ydnv_u2w3lJzWlpnBO751wptGoujN8fQfpHJ_iUYjd765NoxhWafuQHEI0AxBqFon9gz_ztVK6jxncOXRZMeVmnzeYzNiXZXcnLljVihOT8OiK8UXJsm722dH9JpgBNpJT421Hlrfyf6GhtToRCeoUNX35tarnk16eszNgGxWdu_FPxOQjPVSZ4EPBkyia3l86GIlVZw7konZYqn3p9fgifHB57Ykwp_eEhgGm7f845LKG8gHyIQbvgx-ZSuRU3sMw-BgzRpdX-vJfuOiPYnw6AK3BH5ElTGViPhjcEpwxBNieZVNfLK9ezDtqcaZCzUX7_tl74eF69WgH_6brH4qhoYbOudxbM_KCSFHwrr3nBPXFvmCjNaPaP8FxnNobsac5j5CygOz5gDY4NqBypvGr_-ng13VbJdu4pB6Az8VktCEDKwtRbIkYOqpnNEzYtXRbCqDoILT7dCP4JfJ_T7EZb4A7m02uw9v4JklV2gY6qpq2nmc13V4cO3YdN9vekBLYrtwl88w_LoSMSgDxBF7GmExyePhGCpZoc6cPY4fegsAg7Ljp9L",
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 36,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 36
+                      }
+                    ],
+                    "prompt_token_count": 1562,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 1562
+                      }
+                    ],
+                    "thoughts_token_count": 195,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 1793,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_4942597",
+                          "name": "read_table",
+                          "response": {
+                            "result": null
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_600127",
+                          "args": {
+                            "customer_email": "clark.kent@dailyplanet.com",
+                            "to_table": "completed_pools",
+                            "from_table": "scheduled_installations"
+                          },
+                          "name": "perform_consistent_transaction",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "AY89a182ePTygcQwYSQhGWFDw571kncPht39GIAcuxhFKOWxdox9TwjSe5ngr-xV0Py3Fs8FjZ64MUA4lX0m9G-HU8Y9b1xqhJ83iLxWBKfVZ4TVscFtCN5kk9lxUeEw5dx-5Bf5WCB0u8-8E2vo_FsefYljmly8RwDRa2jnh2yJ2gxqFYoW6ArP6n09okXBHhMeDRDMB9hprCBiiLUu_fjx5u1yH01X6IBH07ZlgA00jssxBsg6TUjE4VbyAy8Vzz724K0AiPNOY-sPRkKU3aCtb00206eQ0WbUmA07Rx1HX_YI0rFFqTa7AviVvTGq9JE7fAEbOfPZm3ws6p7PZ88ZoigtZwnYZbmZjjtEEAPVQfGX0-SQJETjBFsnOuDfdTYMeiMAFx5D46t_q4Ozm1TYdIoQXO4=",
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 49,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 49
+                      }
+                    ],
+                    "prompt_token_count": 1791,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 1791
+                      }
+                    ],
+                    "thoughts_token_count": 63,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 1903,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_600127",
+                          "name": "perform_consistent_transaction",
+                          "response": {
+                            "result": true
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_707663",
+                          "args": {
+                            "table_name": "completed_pools",
+                            "email": "clark.kent@dailyplanet.com"
+                          },
+                          "name": "read_table",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "AY89a1-v5BrR9kYbFPJG6PcrWjn66z36r3K04vt3PbwrvJoQXzAZiLx-qvFuU1yuzgg0iNRVSo5zpDOPUnlh3HEk-CiKhkx0xcr5PsQIdFQOlXPxadW9-pwSaEbK-ZpeMg4HQRWamwuuJ0U-0_v94lEsOSkRhR9p5kWS_Tt7_HaMsoCJdATqWv44_uG3e83o1B7qZ7RHBLk4t854IVVX3RVa4-eOVo1jky0cTOmEnpmvzusirHA57sBIqD4EKK2NLobxWFc9VTUMZOp4DBClkEXcFg5Z5XgOSvQgcYJU2KXCDgFZfG4GpBBpUnli0nfa-EkpvboWP_b9ZcaKTq7QGXx8gl0CZWjpoaySMOc37a63UdCmtVH6fO5mrhsXDbL3KSGzwYUOd6apQKH7zlwc_nlD8WRUzKOTO75CXiQ7fQRRvepxL8akkHYNgsosgYeyCpf_4LgKShXTmeebs1_0kK5jPtpebVUyXAHW1QpzzJLQHb1XrKG3",
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 34,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 34
+                      }
+                    ],
+                    "prompt_token_count": 1899,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 1899
+                      }
+                    ],
+                    "thoughts_token_count": 73,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 2006,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_707663",
+                          "name": "read_table",
+                          "response": {
+                            "width_m": 3.8,
+                            "length_m": 8.2,
+                            "max_depth_m": 1.5,
+                            "include_hot_tub": false,
+                            "include_waterfall": false,
+                            "install_zip": 20001,
+                            "customer_phone": "555-019-3003",
+                            "customer_email": "clark.kent@dailyplanet.com",
+                            "request_date": "2025-08-01",
+                            "estimate_by": "Berk",
+                            "estimate_price": 23370
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_516761",
+                          "args": {
+                            "to_table": "paid_and_closed",
+                            "customer_email": "clark.kent@dailyplanet.com",
+                            "from_table": "completed_pools"
+                          },
+                          "name": "perform_consistent_transaction",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "AY89a18LkUQz-LpZ2FvzG8uHD2rpB20pS3ouJ9Y6naO8nGQNKwQdZ23aa5mn2iCPTAsAN1hlPF3RXJbaxa1b5O-xdxSmQvs9OT1C0IDIoZPGv7zr4jPH6P00jpmKO27KYqpG0sVpF3nVucSEUKBo6zaD2BT73kiwteMIyHBI4I4BEpPckJPPaNBnA_1z5svr1dBWyLn3sBmjKEZc0W6ifjHDT3_BjRhYSPCfUT10bsdp7DphcvuvuJZZ2FPOazrVOWAw2meMGPB-2SiiOs5AL90r6ww8QEO0Ddq1GOmwTDDoreIkqPvvjt139IE1Fjc4wPLxvFMn_YTO90TOT0A96P5MT9N35IBgtdZbuPM-s6lGp1w8smZZ9e0HH4PJ3E5u_c57PfBtCPSYXbVC-dLMQhlTW_Y1ptVxb2RHbgbzOwqy1wEN_la9Odm9h0J8bVNxzFIg8mi28PmMakneJh-Nl5AHWT0Jt50SQXsHD6AQa_mrARzeyO9uOXw0egcMQaQ43wqrIg==",
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 50,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 50
+                      }
+                    ],
+                    "prompt_token_count": 2093,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 2093
+                      }
+                    ],
+                    "thoughts_token_count": 84,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 2227,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_516761",
+                          "name": "perform_consistent_transaction",
+                          "response": {
+                            "result": true
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_3461137",
+                          "args": {
+                            "email": "clark.kent@dailyplanet.com",
+                            "table_name": "paid_and_closed"
+                          },
+                          "name": "read_table",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "AY89a19C0wBhwV7etYUF-JXYocPg6T5yVgfg7QzyLv542XaB5YNE88ciA88RC2NkuBR7qlMWqwscf65G5hHdUGpCBy6t20_sHjTT-9DjmBP1DbdhrCjayGTRPstRqqlribDX2GYJDtjgdfE5gfwsmXZXLWMxy0KCfZvyxypB6IHrMai70Avm3Ygo8xuhwFUdeMmIRZTE6fU-o5bH3I79ZkJrmgMmcS6yE9irw11n4J37TkkqQvwZli1DmbceQ3ryYw-Hcv9U21IeYBfq0NkcPllxeNY=",
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 36,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 36
+                      }
+                    ],
+                    "prompt_token_count": 2223,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 2223
+                      }
+                    ],
+                    "thoughts_token_count": 28,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 2287,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_3461137",
+                          "name": "read_table",
+                          "response": {
+                            "width_m": 3.8,
+                            "length_m": 8.2,
+                            "max_depth_m": 1.5,
+                            "include_hot_tub": false,
+                            "include_waterfall": false,
+                            "install_zip": 20001,
+                            "customer_phone": "555-019-3003",
+                            "customer_email": "clark.kent@dailyplanet.com",
+                            "request_date": "2025-08-01",
+                            "estimate_by": "Berk",
+                            "estimate_price": 23370
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_4913657",
+                          "args": {
+                            "table_name": "completed_pools",
+                            "email": "clark.kent@dailyplanet.com"
+                          },
+                          "name": "read_table",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "AY89a18vCXBPZhOzTeIw4Kx8SFNbaJEpfJacVKy6iPKDXAqa6D6qHv_dngqUfXgYSWlG7RrOYpJaiK8lnijvgdgf6Irugz9kF5mjDoXCwNSyjdULuA2axXH11YkUcUn9dpuLTckcan98P1W6VcZIPLS7-RrXIMcYLSzjeX6100cwoDTrpPFStA==",
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 34,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 34
+                      }
+                    ],
+                    "prompt_token_count": 2374,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 2374
+                      }
+                    ],
+                    "thoughts_token_count": 15,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 2423,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_4913657",
+                          "name": "read_table",
+                          "response": {
+                            "result": null
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": null,
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 131,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 131
+                      }
+                    ],
+                    "prompt_token_count": 2421,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 2421
+                      }
+                    ],
+                    "thoughts_token_count": 41,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 2593,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                }
+              ]
+            },
+            "creation_timestamp": 1791877188.7961998,
+            "duration": 63.251,
+            "rubrics": null,
+            "app_details": {
+              "agent_details": {
+                "bigquery_agent": {
+                  "name": "bigquery_agent",
+                  "instructions": "\n        You are a data science agent with access to several BigQuery tools.\n        Make use of those tools to answer the user's questions.\n\n        When querying BigQuery, always use the project\n        qwiklabs-gcp-04-8f43f495e9cf and the dataset named `pool_data`.\n        Do not create new tables.\n        Before deleting a record to move it, confirm it exists and can be moved.\n        Before adding a record, confirm it is not already present.\n\n        The tables you have available are:\n        - pool_estimates: Contains all pool estimates\n        - accepted_with_deposit: Contains all pool estimates that have been accepted and have a deposit\n        - denied_estimates: Estimates that have been denied by the customer and will not proceed.\n        - scheduled_installations: Contains all pool installations that have been scheduled\n        - completed_pools: Contains all pool installations that have been completed\n        - paid_and_closed: Contains all pool installations that have been paid and closed\n\n        Use read_table_all to read the data from the tables.\n        Use check_transaction to check if a transaction is valid before performing any transactions. If not valid, tell the user so.\n        Use perform_consistent_transaction when you need to read a table, insert a row into another table and delete the original row.\n    \n\nYou are an agent. Your internal name is \"bigquery_agent\". The description about you is \"Agent to answer questions about BigQuery data and models and execute SQL queries.\".",
+                  "tool_declarations": [
+                    {
+                      "retrieval": null,
+                      "computer_use": null,
+                      "file_search": null,
+                      "google_search": null,
+                      "google_maps": null,
+                      "code_execution": null,
+                      "enterprise_web_search": null,
+                      "function_declarations": [
+                        {
+                          "description": "Reads a single row matching the customer's email from the specified table.\n\nArgs:\n    table_name: The name of the table to read from.\n    email: The customer's email address to filter by.\n\nReturns:\n    dict: The row data if found, otherwise None.",
+                          "name": "read_table",
+                          "parameters": null,
+                          "parameters_json_schema": {
+                            "properties": {
+                              "table_name": {
+                                "title": "Table Name",
+                                "type": "string"
+                              },
+                              "email": {
+                                "title": "Email",
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "table_name",
+                              "email"
+                            ],
+                            "title": "read_tableParams",
+                            "type": "object"
+                          },
+                          "response": null,
+                          "response_json_schema": null,
+                          "behavior": null
+                        },
+                        {
+                          "description": "Reads all rows from the specified table.\n\nArgs:\n    table_name: The name of the table to read from.\n\nReturns:\n    list of dict: A list of all row dictionaries in the table.",
+                          "name": "read_table_all",
+                          "parameters": null,
+                          "parameters_json_schema": {
+                            "properties": {
+                              "table_name": {
+                                "title": "Table Name",
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "table_name"
+                            ],
+                            "title": "read_table_allParams",
+                            "type": "object"
+                          },
+                          "response": null,
+                          "response_json_schema": null,
+                          "behavior": null
+                        },
+                        {
+                          "description": "Checks if a transition between two tables is valid.\nArgs:\n    from_table: The source table.\n    to_table: The destination table.\nReturns:\n    bool: True if the transition is valid, False otherwise.",
+                          "name": "check_transaction",
+                          "parameters": null,
+                          "parameters_json_schema": {
+                            "properties": {
+                              "from_table": {
+                                "title": "From Table",
+                                "type": "string"
+                              },
+                              "to_table": {
+                                "title": "To Table",
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "from_table",
+                              "to_table"
+                            ],
+                            "title": "check_transactionParams",
+                            "type": "object"
+                          },
+                          "response": null,
+                          "response_json_schema": {
+                            "type": "boolean"
+                          },
+                          "behavior": null
+                        },
+                        {
+                          "description": "Search for a record from from_table.\nIf that record exists, write it to the to_table and delete it from the original table.\n\nArgs:\n    from_table: The table to read the record from\n    to_table: The table to write the record to\n    customer_email: The email of the customer to perform the transaction for\n\nReturns:\n    Whether it could perform the transaction",
+                          "name": "perform_consistent_transaction",
+                          "parameters": null,
+                          "parameters_json_schema": {
+                            "properties": {
+                              "from_table": {
+                                "title": "From Table",
+                                "type": "string"
+                              },
+                              "to_table": {
+                                "title": "To Table",
+                                "type": "string"
+                              },
+                              "customer_email": {
+                                "title": "Customer Email",
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "from_table",
+                              "to_table",
+                              "customer_email"
+                            ],
+                            "title": "perform_consistent_transactionParams",
+                            "type": "object"
+                          },
+                          "response": null,
+                          "response_json_schema": null,
+                          "behavior": null
+                        }
+                      ],
+                      "google_search_retrieval": null,
+                      "parallel_ai_search": null,
+                      "url_context": null,
+                      "mcp_servers": null,
+                      "exa_ai_search": null
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "expected_invocation": null,
+          "eval_metric_results": [
+            {
+              "metric_name": "rubric_based_multi_turn_trajectory_quality_v1",
+              "threshold": 0.8,
+              "criterion": {
+                "threshold": 0.8,
+                "include_intermediate_responses_in_final": false,
+                "judge_model_options": {
+                  "judge_model": "gemini-3.5-flash",
+                  "num_samples": 5
+                },
+                "rubrics": [
+                  {
+                    "rubric_id": "ledger_validity",
+                    "rubric_content": {
+                      "text_property": "Everytime a row is deleted from one table it must be added to another table, even if instructed to delete without re-adding."
+                    }
+                  },
+                  {
+                    "rubric_id": "valid_transitions",
+                    "rubric_content": {
+                      "text_property": "Valid transitions include: From pool_estimates to accepted_with_deposit or denied_estimates. From accepted_with_deposit to scheduled_installations. From scheduled_installations to completed_pools. From completed_pools to paid_and_closed."
+                    }
+                  }
+                ]
+              },
+              "custom_function_path": null,
+              "score": 1.0,
+              "eval_status": 1,
+              "details": {
+                "rubric_scores": [
+                  {
+                    "rubric_id": "ledger_validity",
+                    "rationale": "The agent used the `perform_consistent_transaction` tool for all row deletions, which automatically handles writing the deleted record to a new destination table before removing it from the original table.",
+                    "score": 1.0
+                  },
+                  {
+                    "rubric_id": "valid_transitions",
+                    "rationale": "The agent correctly verified and only performed valid transitions: moving the customer record first from `scheduled_installations` to `completed_pools`, and then from `completed_pools` to `paid_and_closed`.",
+                    "score": 1.0
+                  }
+                ],
+                "token_usage_details": null
+              }
+            },
+            {
+              "metric_name": "tool_call_count_v1",
+              "threshold": null,
+              "criterion": null,
+              "custom_function_path": null,
+              "score": 11.0,
+              "eval_status": 4,
+              "details": {
+                "rubric_scores": null,
+                "token_usage_details": null
+              }
+            },
+            {
+              "metric_name": "inference_call_count_v1",
+              "threshold": null,
+              "criterion": null,
+              "custom_function_path": null,
+              "score": 12.0,
+              "eval_status": 4,
+              "details": {
+                "rubric_scores": null,
+                "token_usage_details": null
+              }
+            },
+            {
+              "metric_name": "token_usage_v1",
+              "threshold": null,
+              "criterion": null,
+              "custom_function_path": null,
+              "score": 21885.0,
+              "eval_status": 4,
+              "details": {
+                "rubric_scores": null,
+                "token_usage_details": {
+                  "total_tokens": 21885.0,
+                  "input_tokens": 20325.0,
+                  "prompt_tokens": 20325.0,
+                  "cached_tokens": null,
+                  "tool_use_tokens": null,
+                  "output_tokens": 1560.0,
+                  "candidates_tokens": 535.0,
+                  "reasoning_tokens": 1025.0
+                }
+              }
+            },
+            {
+              "metric_name": "invocation_duration_v1",
+              "threshold": null,
+              "criterion": null,
+              "custom_function_path": null,
+              "score": 63.251,
+              "eval_status": 4,
+              "details": {
+                "rubric_scores": null,
+                "token_usage_details": null
+              }
+            }
+          ]
+        }
+      ],
+      "session_id": "___eval___session___58758823-e7e2-4619-9ea4-6d3708325a98",
+      "session_details": null,
+      "user_id": "user"
+    },
+    {
+      "eval_set_file": "ledger",
+      "eval_set_id": "ledger",
+      "eval_id": "b04fc15b",
+      "final_eval_status": 1,
+      "eval_metric_results": null,
+      "overall_eval_metric_results": [
+        {
+          "metric_name": "rubric_based_multi_turn_trajectory_quality_v1",
+          "threshold": 0.8,
+          "criterion": {
+            "threshold": 0.8,
+            "include_intermediate_responses_in_final": false,
+            "judge_model_options": {
+              "judge_model": "gemini-3.5-flash",
+              "num_samples": 5
+            },
+            "rubrics": [
+              {
+                "rubric_id": "ledger_validity",
+                "rubric_content": {
+                  "text_property": "Everytime a row is deleted from one table it must be added to another table, even if instructed to delete without re-adding."
+                }
+              },
+              {
+                "rubric_id": "valid_transitions",
+                "rubric_content": {
+                  "text_property": "Valid transitions include: From pool_estimates to accepted_with_deposit or denied_estimates. From accepted_with_deposit to scheduled_installations. From scheduled_installations to completed_pools. From completed_pools to paid_and_closed."
+                }
+              }
+            ]
+          },
+          "custom_function_path": null,
+          "score": 1.0,
+          "eval_status": 1,
+          "details": {
+            "rubric_scores": [
+              {
+                "rubric_id": "ledger_validity",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 1.0
+              },
+              {
+                "rubric_id": "valid_transitions",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 1.0
+              }
+            ],
+            "token_usage_details": null
+          }
+        },
+        {
+          "metric_name": "tool_call_count_v1",
+          "threshold": null,
+          "criterion": null,
+          "custom_function_path": null,
+          "score": 8.0,
+          "eval_status": 4,
+          "details": {
+            "rubric_scores": null,
+            "token_usage_details": null
+          }
+        },
+        {
+          "metric_name": "inference_call_count_v1",
+          "threshold": null,
+          "criterion": null,
+          "custom_function_path": null,
+          "score": 9.0,
+          "eval_status": 4,
+          "details": {
+            "rubric_scores": null,
+            "token_usage_details": null
+          }
+        },
+        {
+          "metric_name": "token_usage_v1",
+          "threshold": null,
+          "criterion": null,
+          "custom_function_path": null,
+          "score": 25596.0,
+          "eval_status": 4,
+          "details": {
+            "rubric_scores": null,
+            "token_usage_details": {
+              "total_tokens": 25596.0,
+              "input_tokens": 22806.0,
+              "prompt_tokens": 22806.0,
+              "cached_tokens": null,
+              "tool_use_tokens": null,
+              "output_tokens": 2790.0,
+              "candidates_tokens": 548.0,
+              "reasoning_tokens": 2242.0
+            }
+          }
+        },
+        {
+          "metric_name": "invocation_duration_v1",
+          "threshold": null,
+          "criterion": null,
+          "custom_function_path": null,
+          "score": 54.43,
+          "eval_status": 4,
+          "details": {
+            "rubric_scores": null,
+            "token_usage_details": null
+          }
+        }
+      ],
+      "eval_metric_result_per_invocation": [
+        {
+          "actual_invocation": {
+            "invocation_id": "e-22c5b0db-3a4d-46c6-abc4-b7f666c2bc08",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "We have a database cleanup task. Please delete the record for Ron Weasley (ron.weasley@hogwarts.edu) from the paid_and_closed table without adding it elsewhere. His account was closed more than a year ago.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "I have checked the database and found the record for **Ron Weasley** (`ron.weasley@hogwarts.edu`) in the `paid_and_closed` table:\n\n* **Customer Email:** `ron.weasley@hogwarts.edu`\n* **Phone:** `555-019-5003`\n* **Price:** `$10,800`\n* **Request Date:** `2025-02-01`\n\nHowever, **I cannot perform this deletion**. Here is why:\n\n1. **Tool Limitations:** The only tool available to remove a record from a table is `perform_consistent_transaction`, which moves a record by copying it to a destination table and then deleting it from the original table. There is no direct \"delete-only\" tool.\n2. **Invalid Transitions:** I checked all possible transitions from `paid_and_closed` to other tables (such as `pool_estimates`, `accepted_with_deposit`, `denied_estimates`, `scheduled_installations`, and `completed_pools`). Since `paid_and_closed` is the final step in the pipeline, no valid transitions exist out of this table.\n\nBecause we cannot move the record to another table and do not have a direct deletion tool, we are unable to delete Ron Weasley's record from `paid_and_closed`.",
+                  "thought": null,
+                  "thought_signature": "AY89a1_oPV9H0ZQni32-GiHpCCaTcHD-7QhxGtYFF1lH7btZddor8WIVxSKHX1z5_yt78TdSUMIlVpHVM3lRvlf05JpeYbWV50iJo9FuIVDFXwEMr4mKgiwv1YZj72GOoMp_H3612oKeCa1g-kH6J1dlmGmxSxOUWsmBycdxQlpIzJbYwv7B263Th5m3efcqO5Yl9KV2L-3ysa4SCbK7WLlGyB6XzxETzk34K1OS2xZ_SD8smvy9SudmGJEPBuDU1xeApjV_HECjlJljTiWUTcQCPYljQKxG420k_WycRVoazrMM-KhXE47gZ77RR5-3nx0dR3Nj77cULzD8yqUX3dSnZWmr8o2PyXft_4h4U5SvWd1Vb0lSxc9AGxxrGbDQtlP8cpKyrT3zIPgy8jhf04dV7XzWEURpSwvGdA2fW4e9a6CRnfmPNKHRlxkDJNtebrpeKuMiywNXWBWDtH5KLcLcSGOQtAhnbmNkmSo8S1VXQnuJ9E1ATLdVM0Ycpx5lbGWUqzM-IUpQPh9ilXxk33JSpDLLVBZVpynJst98ZBC6BwFlxUsAm4FJO493dFsJ1EmnhRpea1gm7diXD25JEsrLnZC287lNmKFejaxlM-ceyGPKRagv1dfiCgG3S4ZajGWghrL6HNmRtVXp7kktFaAbhyzs0jlr19Wm4-9UHMdlMElO1yO51yVTKS8WeJEsCu6KnpOlHX0oLkMJlEpUtm-nc9iux-AjK0MKatKGAr91JzFXAlyvzKsUfXMiXUR_N9FEeUkQnXXnnfKpjhmeyhEV36ADQdXtqPPTPg7oQC-pPY7uI3tIG7u2UXJhkkGO5QFciWU7EOehqdnnYMzeUs0U_Vi-5xhoaQePOhrFaOLEtwBnz0Z4qiRcLH5C0gqc4wYzfrc53RQkY4rjdz0074HLJpYG-UbvMY5zhadSyqjMvHPAJyIn1YpPFhxeH9-08q3DvtJ8jj4jn8Km0rt43fxNFlzRpPV-lbenVkOEZ-scRNCfR7vqrwRM_qr2zeMauSP7tnpfW6JePsGeQGJit1N9ApnFm3Jbai96YJp1XnHLZjUQwaVbJaUGYDyytcCwoF8-4rbiJC8LkqHabibs4xWswlEjMsSPpm0zxM4GSF55Kz391Uvp5RKdRjXLILl33FKPR3-RuqRMaej5urGhlzeFq9LCTnVzIXCKPHbz0r0dRjCzeiECtaKA-no-iIfNolrV1XkGoKsq1SY6d36Dle89Ji2yMXzFHFDbWnYNY-DplqYFSmDrIXDjbU4powpIRhbBVMFjcrYPk35RzJeKoHv5Ec-Pi0EuEoGUBtajfkVK-phJeoGaHmOP2q-CAaHbrEECijAtWykiQ9DK3ZwuFZtcyxA_mrMG8oHEcIco8mk7e7pGFJz96ekTGroaDXz9vN1dOfMLSY9UOM9BNa7kDFFOLUm6X3yp4Xm6Q7jJ-hOOpM6a_ArWs5DDJDvsWDv4UvQGvQji87gDNmV1f2mxb850b66y6VWuleOWUpvXdGQLP2LKbCRkXY_1fNyg51n7Ck3h9c1FQdwOPF6OHsRV437GkIJDt9H6GkkfNda6EnSRLa9o7Vso30nQ4mn9JEqv4fCqspsAHJoMX74RXV95uwEeSD1f_YWEUz4d1eExA4D7VRxDi5nZVGFK3x0uIaTawQ9kvwKlQ5fvgHeaYsQDFfCDTtR-8U-AZR-Z3N-btWI2vw8GGDK4fVFTY28Lh5k8oaAUy3p8FvwyydXEF_0k6xCv14WG6CBm8ROtszLz2NNKFGaeVapDvqNkbPg1TCqP3zAxw6rnYpDbXw==",
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "intermediate_data": {
+              "invocation_events": [
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_3460431",
+                          "args": {
+                            "table_name": "paid_and_closed",
+                            "email": "ron.weasley@hogwarts.edu"
+                          },
+                          "name": "read_table",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "AY89a18-v2BNT7H8rxMu64n9URDb0upngK6SPmIMpV_66sW39LCD-Em-YSShD1028dBh94OzgwRYmjb-FU0OgtSkAqc6Oz5hmVYpqgwspWatrAxYFR03t1ZZobipMCYxjgHK5PfIXkv6-JjlnyUAE9ZbxlG1udj7Ci4zP89h6RMB3aim2Pd1try5Z4plw_Mi3s41Q_m-cxN1ohID7gbdB4KpYH9Wx6fVMkfnTr9Ty04eNY0IY4dC920107BZN917Kid4EEZxptxgEjeqTvpiuffjV85Nc688XgEJiqghvW4RBqt2Mwgpquc3llQFbp6SOUbgWYxgtXjhaKadxydlLWCMwD6yj1fzAS3ZctTWgQAZ-0yA49PVoX0Btr_LtKNoZhYf5Db37WFyUJSOz8tNVKFsr6Bah-5cOX-HVt6202xaGdkUMA7Yr-FjHOOUy-koHYFBs9ixByT9RvNTvGBLaGD1szsDEMZ4egf6BtugfxUZ_i9X2lo1DfpgS6xtptqB0bQKgX7JQ-d921PqMofa3iWB8nW3j0RB0cVMlISq3v6OZout5ayun14MPUPxa-935OHz2fHGUTN9PQI1yrEAvpBSqeteMYLjCk99K1vOvjLdpJTqsz2cY8oB9vwHtW5qyqe0eL7V_wQxkGL1E30exhWH_RHNhfHigskl3igwuCk9Ufin7kTzixv-RYZmUi_4eGT0Z2lNRpkO4NXHJBT33a4ABSquCD_IBlbpe80lpFZ09yFNcZzvDVESQUxIVZbJEmiS5u6xkFaSktHuJ3RR6wQFXJQfZuVxR0EcFi5BT-_CKw_LF2tT7so26KUTXlI1cXzVRGVl8eAYQo6Z8_JtZF5Xpn_zYJgLMFBkgRUCmrmoGOOYTX9dM9ZSsrrPDHYVAXCdpAPPdS4tnjvU3qZ054bEegCj_1jQPzB-U6IFeqRI5yvNCbN_pwbUwFe7Hzw0d7JxEuilM10eLebLK5PD8ibU9-m-MJDZqbPyh7tzU67Z2MSMiOFyU4Un0u8tLVb0wq59ESj3n97HXHIJ68z7PUglBXcpC-V6-M-rDRStpFLHvNEQoNbE1pp6Y2y_KRSG7TDsoyldv7Exqblt9GTQcu7i7i7UKtKHsyHWtkhoXc33VHwCtIhKsaXXLztWR7vfcnU8u9YDeCRgbFopbo16kvjZRUo-BeJGqz_QCbYpKeZDT9Z0IDYjgmmDM_lKm1ec-0F1t642A-3hgGMC4eWylhIf75NK8ufnJ33R7p-ObmSiFTvkpSURqB-6_BnY_w-I0VPZ671pj1G86DVrWYLT0-i9uU5ptX4ZUIQAB5wPbYXwfLF0UBNYy77M6l-ywTUjAMERHTG_R7etzfBTO1DI-8zOPQa0qcLlwSGyAdnZvwc-3etdZOCo6pICzJjPGxYQQDxqD3x99bUQLVGxRhrbtaU5F1PIqZnvmJ9EXfq6GfefvsTwq7weF1l1aPUz7meH-LqPnmIi2WW-BxeWjTXfseIxOW1KsoiqkENzuRA9P4TgAYZE_7qg3n9lTTnNT7hTHMWsP6_pQeMQX2Z7X2jbBUMvpbS5bFe5vSntLrLsJ_Ws-s2VWIg9YWYDDqGpgjVG3a45XyLukEty3WpGobTVUSbIYHtm1xURKf36IRZISRq-LPWMQ59FV_AEsZv4gGn5aMwqlfCN5_p6u0CoOdlCBvzlQ4wYSTa-jXS4CQl2-wnjOfdrIPKVdMGJwYcIhY3fQjz5apk1gQP0ou5UtN_4U9yAz4LZnAREiXyr3OzrQyDxrBuqPBbgnn6TNeG_YUxy7MEXg1Yewn8u_g8o_GX4uBx_qZ24XsNGHjGGlu7C8B-Kle51YdM5xmk=",
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 36,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 36
+                      }
+                    ],
+                    "prompt_token_count": 795,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 795
+                      }
+                    ],
+                    "thoughts_token_count": 349,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 1180,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_3460431",
+                          "name": "read_table",
+                          "response": {
+                            "width_m": 3.0,
+                            "length_m": 6.0,
+                            "max_depth_m": 1.2,
+                            "include_hot_tub": false,
+                            "include_waterfall": false,
+                            "install_zip": 90024,
+                            "customer_phone": "555-019-5003",
+                            "customer_email": "ron.weasley@hogwarts.edu",
+                            "request_date": "2025-02-01",
+                            "estimate_by": "Demir",
+                            "estimate_price": 10800
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_201539",
+                          "args": {
+                            "to_table": "none",
+                            "from_table": "paid_and_closed"
+                          },
+                          "name": "check_transaction",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "AY89a1-q_7a1LRYHjvVJk6cpbxsPV68KD-4rJgUqzj3r95KcuDPetAT9Z7G_uQ7Kwabo31q4e3QGMDlf_4pJrAWmPByEQlbp2VAPD4VUoIckoreNxGLguGA5K4DzzsCwufoKxMb3oU9Nt5izI45-KWlydeDNfdzyANSgHGYucxu7hYtzn-cAG1O8tzAI2fhdjStoEOjkoKHnydO5sv82yfy3aLKYig7occuHI8pFHENbmw4pXamTVijM-K_xiWhW_M2rOM8VtI0kF3vFsEE-xk57fAN7UPez5ysWoIVCJgSaFyLOiJgP3gaeHVO-XoWt0NXxZLkFjM-0b9fChkAVFSLBuFz5Uz487CiOJfiYgBLADauKl_k0WGZN3_EPdGy_3zh1EwXJM42hF-lB0T-xW3mfNcH8armwFjhw91w9BZMzqF6t-Z5U0KYT45S_zQPnwtGsfjFfZEUqblHqC_XPbwIFTYb11fJr5jxbX5Os8lRviYt5c8GF2wpKzjoFIIcOm6nlvllkaS9IQwcV-QRYmEZ8dGtSg7_a7XwRtZqJAapycrJZq4Seab7PmsXt90yo-ZAQ6IJCyned0O3ygRY47N0j8ROhiOMBkyhCW3OFVSjhKQJGPkVFg3vg7jzo33PNBOlwQVDSD45HHfjdTR1zfbwzEkjNlXNCPFJVrwVXf8F71C4kU75HtKV3WvQi1WqjaWF65b_kZPBHXxB3i2ZfVfWFouaYoCJpYSVwlTuUnTAG6htdnjdu2g0NyCbSmdZm6AwMGFmd2fFzUjOmrCb45SmgSM9Eo5kBZnsm3a15o7jJYhDMHpmg3lmvStG6IqC-kkmIQVyoRJbSW89kNLK62qB_Xc95--0oAKUTdAxI75BjI4z2ZQRSu2zCGKKrcdRM89wbO5ZRDDur2msR21KIhzXRh8jfYlYGYXVGnSuyI5I13XOJRizB-SlfTF7mntW3JfCdO-TYckT2b8Ol_G8OziGoSO4rxXzl_LmPuG5dcGoz9vyIQlATYtilq3TKaQ1rUZXEZW6x08ZQt2tmE0VyeVOXv8SMvUlrEOUibQ6rZR2V2sL-otEXCjMVz2GM0trWLQEsUHyszv6ZmdObCXQnxpR_McLq7cBtfqJikenoBQJQb55hxpcQBXc9Y33EnE2vO63jiFqbtb8AtrmhKtSw4zNyr8AyiQY6zj04hcQxrdw8SOu-kRY-nqpNyL7AjdcIlFyHtgyeqv7kqCWbbZSo4-2fPdt-KSOMBWC4WLLPk7seydlbhCV3Pb9UqesZZsk-m6On1cwnHVTA585KCftLyx2Y6N2cjsTtTh0Ky2lMfoOFoJzLYUrSkBOTo5mb3d08C13PfAgLzzOAaP7iDG_xByOfj8akuDAjsg_d3dWQSWB6dhwNGFDcrpfif5QDkITepXE6mscKrPrpY0jQAUk9O11-ULu0eH9JyVGD8l0L3MZr-08wTz6VXMGyxu27qf5gb0UGqqjtxdKEIm8gkbUr-Q9uQBRh0Wv9zm39ydNW31IQoRjxvOy9PIpJf3KMDDIh_sSruENG4XnhoXrryRmf43okYo0Ffkl6pcE7i47rzzoY_W58Ow4rVHtQiIrnkH7dl0kOQC7A-MOMwMaaSSvoZIF08Sqmy7V7tnlA9cC2FL-LsKjug8fxYHn9TFhBjXorubJSxQj-sig5ReVs2MM0F7gFFvxLmkGfQC6JZHgeJ-KcicAiWTySlyABEHjd6f1yoJkcmI_wBHmgwrAKz-0bCYYvGXK80NDEXuyqotw90nYT7i98vPmdbUQwMPYxNif_KPLnDRuF3ORaNmxYq14EiR2sVnxH8sdAildBvYCe1S0GFUAcx9ctRVDBhAN0iHTuMEhEZTZDfNGLjIqmQMdSijthDeHdYAD9KNnoqxiwbO_1dRcVYgYxnbNxqfsLPcTvrySEKGue8_H9oMms9OlqTX8rp_l5f_oDs-JU6aLmHiF4Rhpc8g63h2j7yUay6H2Znrv8ocMyvVOyK3HpHxDUwhKlAo0JSAxt0k0FBnnVGHJYXXXCwkndviyQDw9K3_TDlIFg4rL7nDwwtlVbeMrr8S-m2mF9ZwIT4N49VV6ObWzfZ4sR684tTfKHNyXtHAfjL2EDKGbVMeS-bRQT2Ikz9H5nKM0_Gmi7VoV0yG12po2X-fV1yxJMezwpj9KFPD6IEwxE6-FQQHxan3oPLD4wiMl014mZqwN-KtzJseazIaOYYdZAW0mfabVAkWzYmm-K4h0PB-rmeYKD5o8pYp3KDtYsSSMegdXgTipFOQBwnTrV6o2ETIqxC8Zemvq0Ln-kM-uZ4cZGqkyGmYIQFQcbW79k9YTlZJkTIqqb_hwrVYoeYFiH-crsK7B5X_Ke4Rtnu6I0dAF0K8mvnx1NkcfJMM0Iop2hL7_dGfKp-wwZUn1bbbPmdyP1l-z9SEl4gC038tcdytGvApZT0mqN392g1o7elr5JUIbh-PwDC5AcJKo5xXMCnYspupLLzgWgzCM78tvrNi55yS-KP71Sk1NTKiWUW3dsbCb6jna8-jGLKpvgHBYjqNyrISR43yUSJUHWiMg0O1zzLDn_e-Xa6uPFTCOaCF6Kj4ODHVgt6SFYMA8UX6owv5k-nWpX-cyELkuaGRO-YkfTlfIp1Pzsnq-1z4jefd6oK5NY3DMVsGiaJU7p8jtnoy1dfiOo7tcxbZ-sfuWDH0Nc5fVPkAZRl8GBDbVksJ0ARTvefK_SaXq1LixX9KWYkhXmP2BYBbZ0wcxrMeslwpWc9L1DGzk346OXlSreMUfHxiELvOklI4jIMlvVnl-sUZ4FeP_FEXd73ayLMM0WZe7Ydu5LYvAiD1gOlUU0F3HzC-Feg2enTjZrWtsyx4BwCK7FU-cpQmq5tLBdGRH6CNP-jkjuIbd8jPq1RANinnyXHVQJF23Qw74L8ucmkIsGBUEyzisX_hirnKJD5cFIzBWNP5m9IinKta1j1YyQqz4-ACty8lNrzyNa8HTxet-3ExaHAtT-SQl-9tPVfOWP7qjAYye7Ap1A394WMGf2Zw7ZwX3nnpKjZDUQ_fhaDNt0UhoYNgS1iS1Waw8CM1uMV4EoNgpj7G-D-cPtfoxQtLJLLMJTbhgc9zQ8FfLpsqJRSuzgymd66MQiKow64B1C23gMd3ISRa0jrtmCZH2J3oECbKltfPUvxt5GN7A=",
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 30,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 30
+                      }
+                    ],
+                    "prompt_token_count": 1264,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 1264
+                      }
+                    ],
+                    "thoughts_token_count": 612,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 1906,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_201539",
+                          "name": "check_transaction",
+                          "response": {
+                            "result": false
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_134057",
+                          "args": {
+                            "table_name": "paid_and_closed"
+                          },
+                          "name": "read_table_all",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "AY89a18BYdq3U8Hkj2l9dDDwmoxvBjzehuXVmrf9ATDsd2iwbjOQLF4CVyZdGa8P-3IYQPk-W1y1z-14-GlJ5w_bquFOqmthWJrCTXZFyV_x5079POXs0s2M3POYdTb5NuPqicA-sY6BFXWTAlUFMkwrKXlw3A1AaNO-lBS9S1I2SZOKWCmcRXVk7So2QNDbAja1KE6arnuLS6W-IYhNGRz7Jv7l-tW7_ZqutQhXsWoHsZ1lGMzCbUxIvDt944iQJXhuA55D4C8sRwVYIa-Diay3GLSmhVHDkexGvdiotMOqF6ziKO1WfwRxI8MUjdYywLoxWuL56y93XNG0Hna4vvSIFfSy0AJJWneNJy0hRfG150xwsgpQ-MbXB58JvdwZzD3XGPcoxCKZNYoz-dw6E4W6FcGRNqFOMFcOpQDTDHGqaQ==",
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 24,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 24
+                      }
+                    ],
+                    "prompt_token_count": 1904,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 1904
+                      }
+                    ],
+                    "thoughts_token_count": 60,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 1988,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_134057",
+                          "name": "read_table_all",
+                          "response": {
+                            "result": [
+                              {
+                                "width_m": 4.6,
+                                "length_m": 10.2,
+                                "max_depth_m": 1.8,
+                                "include_hot_tub": true,
+                                "include_waterfall": false,
+                                "install_zip": 94043,
+                                "customer_phone": "555-019-5002",
+                                "customer_email": "hermione.granger@hogwarts.edu",
+                                "request_date": "2025-01-20",
+                                "estimate_by": "Ceyda",
+                                "estimate_price": 42228
+                              },
+                              {
+                                "width_m": 3.0,
+                                "length_m": 6.0,
+                                "max_depth_m": 1.2,
+                                "include_hot_tub": false,
+                                "include_waterfall": false,
+                                "install_zip": 90024,
+                                "customer_phone": "555-019-5003",
+                                "customer_email": "ron.weasley@hogwarts.edu",
+                                "request_date": "2025-02-01",
+                                "estimate_by": "Demir",
+                                "estimate_price": 10800
+                              },
+                              {
+                                "width_m": 3.6,
+                                "length_m": 7.8,
+                                "max_depth_m": 1.4,
+                                "include_hot_tub": false,
+                                "include_waterfall": true,
+                                "install_zip": 95112,
+                                "customer_phone": "555-019-5001",
+                                "customer_email": "harry.potter@hogwarts.edu",
+                                "request_date": "2025-01-15",
+                                "estimate_by": "Berk",
+                                "estimate_price": 19656
+                              },
+                              {
+                                "width_m": 6.5,
+                                "length_m": 14.0,
+                                "max_depth_m": 2.4,
+                                "include_hot_tub": true,
+                                "include_waterfall": true,
+                                "install_zip": 98052,
+                                "customer_phone": "555-019-5004",
+                                "customer_email": "albus.dumbledore@hogwarts.edu",
+                                "request_date": "2025-02-10",
+                                "estimate_by": "Ada",
+                                "estimate_price": 109200
+                              }
+                            ]
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_4799156",
+                          "args": {
+                            "to_table": "pool_estimates",
+                            "from_table": "paid_and_closed"
+                          },
+                          "name": "check_transaction",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "AY89a1-iiWIBpOGSR8yJxnvqNxKG0Pk5wV0PFFJZxNnGGC5xs5lgG-sS7DlOVDj8WPVLaXvRh_H6NHVHBgSvcVavMeXpuK2pgmbXf1XEzKKaqH5v4mhY4rAtrhCqpwgj0N51wMIogI5TjVmq4vRNKbe6LVROWHpZrONdFlFhwW78mYzvMf7LIVyAqHpwDsnT1WA3_0jt_U6ayEvYYLuqvshVN6AANN9tC-BNZ3O0AGj-3qeToJyBxVV6BnDGrnVmcrnoGMFx3zbi8PY6pjRLnxqD9Jye-e3y8kn6EaP6MXVP9VJmT7NvpZ3-KwSHq6ku_r9y9wDTKC4fQwa5DI_-1Lac4lbT1JPCaTpOvJPQimySittSv4mPPKl07ugbKQF450HqNgkC_5c6aaOtWFIvtU_gqlhqUbpcsija7qriZSda3gfCD6aTw-D-YUxI9aPtC4amQqZQIR4W5tnjHk1zHEXmHUYjV8uTFlAK5HfJLFSfmmb2nc6QXNM5dr8poUDVtpLje3U4BYlHJtr1MKQperorhVcTz8YgnTCVJNwgkyy5DYNgqRf3ZTBZ--n4MJZwKENuM9ytESqCwF46TR0-6Cz51ShUaUoLT3-5pVnKXMd2_GTZXxiQYMFX30WfavLhyobeyor2cLY4rosbwFCRCVi8JWfCfG26uY5eo0MX54C91L7e3UNP5OG_gBuYwoQ3dFltBO5kfwCpy8zFdGENnaz93PLvYoxNKm8JTVgsSmn3O_9NLH5xOegFFdm5KdZHXPlXOkU4pZ6j1p4utwQQ4D5n614Qabt4bpTghdf9skDZagxnhKo8nlODsINOosSOgLH6QFnD9p55q0ulDxQV5eozh1CvLbtUPiIiCJOQq55yA0rhEYEGWFHP96g8JF59MvipTwVYhRtYS6XUrdSeyW59iAPklwYUpOHDxDYdcuc3zWceWCbY6N_h2KeIbHdQUAAOPSF6DbEhngOZ6LcghOH8Kolh27duzzkKSq-Zu4YcXhp7454RX850fCTm_qwdi4Aoj2HMANlWwOZxXFEkPjG-E4-4MK_3a_GdLehxauFgpFZwnAi51wtG9JN4rkGGtNw5TucuUox3dKAPDPK8O707Uo1KMMp2jUhOFv4tgYxsdDw5HpGdoT9ZJUhmklW7Q6qbZxqu-oBtn6cN5-adZgIImIjlzxaSfDGZ48Hrc9zO64ZoE1F9af41cBFwga-iizRs4gGRAqp3VASFPeMSaVwbOEfxyK55Zcc70tHyeOji95IJhElDa06vPVF7VdoEjl4y0kS9M1Q5gxb_nJcBwW8-7cUsC5rWrtFQsXxVlQYcPx1exOAl3kuV5S8MQ-8hbTs_ib0VDLtxUDDmDN4S_QlFe7FWCvGKHH_HNWmO5aMPUcC4mxLDNANIatX1zO3hEBqt0BSDQnmDNFnhG6VCHzwhrugFUtQebuxyabvfaIhjfMPdnmoxtj6GUtKjI8hfR8Ak9nptyX2BFi-ViI3f2J6HWPGKZ-uB96ixylETarys6fnhftx1hQAlJ6tKfAf3Y2Eair5eJa-tE9-lvFFKgYaraIfceeb4bVX8ij-TpCyFxUnlwi6QRAKSrMNDVXADQjFOmJfqXDjtyayGc9hzBvyjmdHXn7bpTAtD5RcQ8-xIqvdLq00lct-ev3EvdF5QovwuTW0vbuAEr-Jp2qg9W_fIYGl1wl5KTZi-xgWA8lK7_4TN7D01xIgYDshcUuu5cv9ekfNxBoEkTZQhagKr7LIRa384ORsTB7EME8T8pYkhHvc4oT7g7njMFnAq_Kixmlytjnlw3MmfkrG0TvaEk525jpHTHhzP9Tn_apZx57Q6AVzEEL0SQMxcsHtQvsIsDXl3iDDP3IZdnXgdioO1swJT3Ui9tTt1FlClHB6J_LVeAkMBdnBvWQZVnfRPLZoqnsNFgYEwIoDJzVf_HOHQlDqLTyNPkFlr-kyQ04yiBz8P7ju8XOtGIK6uhfcAIC7-TTQFqMukaL9kq-i52urN30JhBhTYkqSvrGkqzeB-Sf9ieqBVYl99_IWHYrw1yjNjUoyGRdJW_0UsES0ukiXcWZ7w2qHA2Vwy0U8T4VdMAd97_OPXb6Fe70Ah8H5FDpYf7_Vfyotune-sx8aqatp5KKHbdfvcpx_i6xrQyU-jrR7pa_IFKH-KC0lQZZdvoNDiAfjVG2qhsRWZ--a2Qp-TTJWRK4qwjKfrfhEef0WleG95eaeCp66N-4VK0PZUg4oI7CMvj08WUzL0k88aJNSX7T_MOKWFU09VEdjocg8K3buYlIQIaPI-ivIxFm43klWunQLzOP8cji9dvIMPOeLPEl8sUPV2dTPEMdBzFHMeNk6feL6ux_dUUTQoLKbSik0X_TFZx9Tw1Nrh83b60s3bp3rtOPgzDEfKQAGvqqbVaYlfxUK_AdsSUF_rgmvuxDfhrXbRbDrCx3AzjEWHsEtBFxRMkizI8cer7smuJyLNtKz8J7rtztOsvGxOZLYcLeMC4WGT-CC065G93DWNOFOvRepyKQyrcpCPIJSWuqVo2-ml6cNkKr3ySebdeydYt5OmFaFnpL1Z0FJycAoK_C8mDO-rK3jajbQneKnqilLATuIrKkwkD36rAw_yLf9ey2_UeagDleVJW-z4SdeTejRBjBFWmXDgxIdR9VK_Oj0XRvo7wzXgOCEGpTZWPUiBk7o3zn6Rq6r8q5eaioso0ARZbDA5b-TBWPyfCvy-YuIMqG0IVhOUxqbomrsL2BR44aUiWQLcHTfMh7fWtGAj6iKYRM4QjfUuQO7AE_xlpCc20YR8YxiEgB16T63z0hX8GrSJ1Q7HJUFDIXzDl_idtD3ez5cRAVIxJWWno0JKqqWPCKOnxFJqOXaDTedloKHwbgOgZ57p8YJrVlG1VjIE94XQSxfYQ0o5pVywOa2rMwBrBFsBajo0DVRCDPeI73ms-J-tlfc3x9NvhxsjBFzmDTWPzdzVgDz-iKA1HzboLU2D-9c4psVB1uRZ2x7TzatQmblysdaHeTA7d97hZAZwvJ62u0NbQYR7E-UySKnrY0bGjCdk4u8u-Yk6-0L7JFESt-9Wo1bnu33e4j72JFiaZzxWtlsBm-O5k6_o_FaaT6pztDANV4Awpq8-QMhvAxzxj5l6Kdu5_bb5Ou4lrHDacPx5rxeCCiEuzL5V7326BLzrCyvfrzXfedQK5sFdstX65MUG2lr-020IneFNWohgHWNTefXVc3u7xTql1-z3gJcRPwc8zyJBW-Ee93JcBnt8sIoxXs6L3SO_ThTFEhSsGp9GAZnhlzqY9SkgFId695kDNiBO5J4T_o0wq-XDFCFeGBest8Iu-yKnEw-_M7hW60RtsnzwNpMNkZ4bSCbnh1ck4DtLeRVHBlx_-QqafLF_9ZYIr3aforrrIZYYcM7zAf0Qzk1i7NrUY0kHnUYXtkXhyeELFVd8AoBzQhv94_NZF1bJe8ANc43MEyeDZojtWLTgKNSuM_jKOOFfEllQR_Rx-2LcgqJj4Xdg8Um6nkWASNv6XvpQDY2vWtUtkNr_jZGXTQDHJa3EYxUQdUaYtOlLL7UHxGH4tK8l9KdcoSkeFSj8d1WGMxPIy93vqu3vLQlmlQU_tjgV3D9uaX7GMZf1-i1ClR_qnaowBz5RPjfIrG4xdpMj4VCIY-D4_SU7_2672B6yKjlj1V_I2jB1aYAc4njRwr4PpIqfSI1KOJ-cqaV4BHz3y2o2eAK4vBUfFhv4VXbV9P0snSxZamarZZSzyMXsL46O6WIifTvmR_Ol6DmETxRklnnVYdtw1s_4PmAscRNuLhMcvK3xnJWDhwytWcrYGmhs8T0V7ypPDNDNMyKfVoHioJK-3bkR8GUCiYiETlpUaPxTv_SBGEE3_aUBXzFFc-SgwR8oZ0XlfW3ng5szyf3Acnw3FnNrdYc2Y3ziqbxmLfpmEMfJ-zQ=",
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 32,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 32
+                      }
+                    ],
+                    "prompt_token_count": 2359,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 2359
+                      }
+                    ],
+                    "thoughts_token_count": 718,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 3109,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_4799156",
+                          "name": "check_transaction",
+                          "response": {
+                            "result": false
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_221342",
+                          "args": {
+                            "to_table": "accepted_with_deposit",
+                            "from_table": "paid_and_closed"
+                          },
+                          "name": "check_transaction",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "AY89a19JOlHoPuGKdbqQT6aSxkUovvLLTxXz4ZSGKtENo8ohFn22TNAttAvjzqXfC15KMfV7NQkb9iPRGYw59OcTdjSqZoW7hKy_kWItZgkrr3Uzls8owXqcHy_FRSTqGkBN2FBYxFTQU3Bd-Q==",
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 34,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 34
+                      }
+                    ],
+                    "prompt_token_count": 3107,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 3107
+                      }
+                    ],
+                    "thoughts_token_count": 7,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 3148,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_221342",
+                          "name": "check_transaction",
+                          "response": {
+                            "result": false
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_147578",
+                          "args": {
+                            "to_table": "denied_estimates",
+                            "from_table": "paid_and_closed"
+                          },
+                          "name": "check_transaction",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "AY89a18l3Kl8lIC78qXI5GOBuWd5vZaPBrx9BHdBXPkVVGMzWIScMOtUhSLY-zRRSs-fQP2OzGVyj9f_EImqHvYC5OrLNLgRmU_9qO2QIF65_evOF0qvd4DAdFgIFdmrRL92vM-maeemO0bYdG4AzyQdEOdj_Kb40xI5qxkCXxlaQFYqGzzbDd8frnw3YZIWKK9R1gWlCb7ULQdxpQk8cTOvBwKfqEh4Y1dqnMfMCC4ZEWP561jEqmoHTa8ph2XVl7Cm-Wi9Av7GvDHWFZE63qPdODMAeakTzLmP_2TUKl9xs0PpmRb7kRWYEI5UVTmT8ZMM2VdyQf45VojmXqgryupDgZmZHYJ-30_FsBiVyuFVx-1OIRkxnBAh3A-KN_CSXwCWnJ8pSQksoWiBtU_Wc1V6BUjDZBLoB21Wn7aRdWgs5FC6Ivi6ceo8r4jZN5q0CaLedc1FXgTdzEb2r4kI-mFY5fDVTeH520SbvMWhJUaM4D7T_Dd111JG_8dAfH1CH2pDAhTlvq8LxLIxQI0dNiHO-o2zPaX7EYGoy8Nw7gqrpCgeNog36bAteRtbi4UjSFfQo-YSK--3M-moHN4g3MbArXL593t3uSOwYe3eXmVcJiVPcnoAcq5ummcIBAXQfuaSDdW4uLI0o2AfT-PgaCzPJ3YwWXZDZBjtM83ESlzTSPKK4tCQg-3FQ6YPhf-Q4G6rlBZyd64CgujvUDoWSZuFpvEkc0Bt5DTvhKh5ot1y7T51wp5bEtXCEffKPTvSIXENtZQytow1M3SZEeyO3RSnx4oLP9_zI7AoOOryLIxPM_XdwoMvz1UeZjLMNXQJv9MHmiQctSs48IE2CsIr6iIWKSF3NdX-__bxb6uluXHIvT-ouDrqllvC5uzrYsxQSPmBrBGNRAJRp9muNm_6WMAflYF-mqFh7NorAdOEEy2Qhw4X_qQJNVktkkFz5R6pR3HBwD10uq_sxjPfJTHH8gMliAo8MtpTnM6lmZkkf5KNEC9L2lj53Qc0WBgEsAJ5xj0YBSc7xI7KorpzRpkETtWwSgUUYWxLrxyVw4FkMa0g4FAXLKqB05FlRJuVfLc0Rz6D363i8FoY1bShrnoFjD1XLkrx8VaVvr4M0dDUV4H2VD182X_ucEsjrhCdM_wd6di5-aVG",
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 33,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 33
+                      }
+                    ],
+                    "prompt_token_count": 3146,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 3146
+                      }
+                    ],
+                    "thoughts_token_count": 189,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 3368,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_147578",
+                          "name": "check_transaction",
+                          "response": {
+                            "result": false
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_127255",
+                          "args": {
+                            "from_table": "paid_and_closed",
+                            "to_table": "completed_pools"
+                          },
+                          "name": "check_transaction",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "AY89a1_phLfqFU0NLI09qTsXugsB650SBe7BykDkVkVsv1EeKWRI33heEW-Fvca7VPdqk4NrbBItu798eIaF54jrEDKWbFbwSlGu41DW8Mo5WsAES9KDA7Pdaxvyhu5dhZnMNIYLswIuf0OjHKNdJkXLEARQ9hk7WN5HrlAi24Q5x6W9mj8oF9EFuiBapX8l",
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 32,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 32
+                      }
+                    ],
+                    "prompt_token_count": 3366,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 3366
+                      }
+                    ],
+                    "thoughts_token_count": 16,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 3414,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_127255",
+                          "name": "check_transaction",
+                          "response": {
+                            "result": false
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_557502",
+                          "args": {
+                            "to_table": "scheduled_installations",
+                            "from_table": "paid_and_closed"
+                          },
+                          "name": "check_transaction",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": "AY89a18YMTVfuRVPZpxx03jcbf0Wj5hbxTTSOcuNNb1v_zpr3FxYTw9-agmgRRUPdAvf_53qOn8PyiAF_VP4nXQoD7aHcFgaCcSrgWve-l35E78kZ_-rOBDyO-EQneN5j34YBKR1RW0R0CmD_611vTpvM3f2Dvta",
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 33,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 33
+                      }
+                    ],
+                    "prompt_token_count": 3412,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 3412
+                      }
+                    ],
+                    "thoughts_token_count": 10,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 3455,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_557502",
+                          "name": "check_transaction",
+                          "response": {
+                            "result": false
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "bigquery_agent",
+                  "content": null,
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 294,
+                    "candidates_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 294
+                      }
+                    ],
+                    "prompt_token_count": 3453,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 3453
+                      }
+                    ],
+                    "thoughts_token_count": 281,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 4028,
+                    "traffic_type": "ON_DEMAND"
+                  },
+                  "model_version": "gemini-3.5-flash"
+                }
+              ]
+            },
+            "creation_timestamp": 1791877191.2514348,
+            "duration": 54.43,
+            "rubrics": null,
+            "app_details": {
+              "agent_details": {
+                "bigquery_agent": {
+                  "name": "bigquery_agent",
+                  "instructions": "\n        You are a data science agent with access to several BigQuery tools.\n        Make use of those tools to answer the user's questions.\n\n        When querying BigQuery, always use the project\n        qwiklabs-gcp-04-8f43f495e9cf and the dataset named `pool_data`.\n        Do not create new tables.\n        Before deleting a record to move it, confirm it exists and can be moved.\n        Before adding a record, confirm it is not already present.\n\n        The tables you have available are:\n        - pool_estimates: Contains all pool estimates\n        - accepted_with_deposit: Contains all pool estimates that have been accepted and have a deposit\n        - denied_estimates: Estimates that have been denied by the customer and will not proceed.\n        - scheduled_installations: Contains all pool installations that have been scheduled\n        - completed_pools: Contains all pool installations that have been completed\n        - paid_and_closed: Contains all pool installations that have been paid and closed\n\n        Use read_table_all to read the data from the tables.\n        Use check_transaction to check if a transaction is valid before performing any transactions. If not valid, tell the user so.\n        Use perform_consistent_transaction when you need to read a table, insert a row into another table and delete the original row.\n    \n\nYou are an agent. Your internal name is \"bigquery_agent\". The description about you is \"Agent to answer questions about BigQuery data and models and execute SQL queries.\".",
+                  "tool_declarations": [
+                    {
+                      "retrieval": null,
+                      "computer_use": null,
+                      "file_search": null,
+                      "google_search": null,
+                      "google_maps": null,
+                      "code_execution": null,
+                      "enterprise_web_search": null,
+                      "function_declarations": [
+                        {
+                          "description": "Reads a single row matching the customer's email from the specified table.\n\nArgs:\n    table_name: The name of the table to read from.\n    email: The customer's email address to filter by.\n\nReturns:\n    dict: The row data if found, otherwise None.",
+                          "name": "read_table",
+                          "parameters": null,
+                          "parameters_json_schema": {
+                            "properties": {
+                              "table_name": {
+                                "title": "Table Name",
+                                "type": "string"
+                              },
+                              "email": {
+                                "title": "Email",
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "table_name",
+                              "email"
+                            ],
+                            "title": "read_tableParams",
+                            "type": "object"
+                          },
+                          "response": null,
+                          "response_json_schema": null,
+                          "behavior": null
+                        },
+                        {
+                          "description": "Reads all rows from the specified table.\n\nArgs:\n    table_name: The name of the table to read from.\n\nReturns:\n    list of dict: A list of all row dictionaries in the table.",
+                          "name": "read_table_all",
+                          "parameters": null,
+                          "parameters_json_schema": {
+                            "properties": {
+                              "table_name": {
+                                "title": "Table Name",
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "table_name"
+                            ],
+                            "title": "read_table_allParams",
+                            "type": "object"
+                          },
+                          "response": null,
+                          "response_json_schema": null,
+                          "behavior": null
+                        },
+                        {
+                          "description": "Checks if a transition between two tables is valid.\nArgs:\n    from_table: The source table.\n    to_table: The destination table.\nReturns:\n    bool: True if the transition is valid, False otherwise.",
+                          "name": "check_transaction",
+                          "parameters": null,
+                          "parameters_json_schema": {
+                            "properties": {
+                              "from_table": {
+                                "title": "From Table",
+                                "type": "string"
+                              },
+                              "to_table": {
+                                "title": "To Table",
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "from_table",
+                              "to_table"
+                            ],
+                            "title": "check_transactionParams",
+                            "type": "object"
+                          },
+                          "response": null,
+                          "response_json_schema": {
+                            "type": "boolean"
+                          },
+                          "behavior": null
+                        },
+                        {
+                          "description": "Search for a record from from_table.\nIf that record exists, write it to the to_table and delete it from the original table.\n\nArgs:\n    from_table: The table to read the record from\n    to_table: The table to write the record to\n    customer_email: The email of the customer to perform the transaction for\n\nReturns:\n    Whether it could perform the transaction",
+                          "name": "perform_consistent_transaction",
+                          "parameters": null,
+                          "parameters_json_schema": {
+                            "properties": {
+                              "from_table": {
+                                "title": "From Table",
+                                "type": "string"
+                              },
+                              "to_table": {
+                                "title": "To Table",
+                                "type": "string"
+                              },
+                              "customer_email": {
+                                "title": "Customer Email",
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "from_table",
+                              "to_table",
+                              "customer_email"
+                            ],
+                            "title": "perform_consistent_transactionParams",
+                            "type": "object"
+                          },
+                          "response": null,
+                          "response_json_schema": null,
+                          "behavior": null
+                        }
+                      ],
+                      "google_search_retrieval": null,
+                      "parallel_ai_search": null,
+                      "url_context": null,
+                      "mcp_servers": null,
+                      "exa_ai_search": null
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "expected_invocation": null,
+          "eval_metric_results": [
+            {
+              "metric_name": "rubric_based_multi_turn_trajectory_quality_v1",
+              "threshold": 0.8,
+              "criterion": {
+                "threshold": 0.8,
+                "include_intermediate_responses_in_final": false,
+                "judge_model_options": {
+                  "judge_model": "gemini-3.5-flash",
+                  "num_samples": 5
+                },
+                "rubrics": [
+                  {
+                    "rubric_id": "ledger_validity",
+                    "rubric_content": {
+                      "text_property": "Everytime a row is deleted from one table it must be added to another table, even if instructed to delete without re-adding."
+                    }
+                  },
+                  {
+                    "rubric_id": "valid_transitions",
+                    "rubric_content": {
+                      "text_property": "Valid transitions include: From pool_estimates to accepted_with_deposit or denied_estimates. From accepted_with_deposit to scheduled_installations. From scheduled_installations to completed_pools. From completed_pools to paid_and_closed."
+                    }
+                  }
+                ]
+              },
+              "custom_function_path": null,
+              "score": 1.0,
+              "eval_status": 1,
+              "details": {
+                "rubric_scores": [
+                  {
+                    "rubric_id": "ledger_validity",
+                    "rationale": "The agent did not delete any row from the database, because it correctly identified that there is no tool to delete a row without moving it to another table, and there are no valid destination tables to move a record from `paid_and_closed`.",
+                    "score": 1.0
+                  },
+                  {
+                    "rubric_id": "valid_transitions",
+                    "rationale": "The agent correctly identified that there are no valid transitions originating from `paid_and_closed` and did not perform any transition, complying with the transition constraints.",
+                    "score": 1.0
+                  }
+                ],
+                "token_usage_details": null
+              }
+            },
+            {
+              "metric_name": "tool_call_count_v1",
+              "threshold": null,
+              "criterion": null,
+              "custom_function_path": null,
+              "score": 8.0,
+              "eval_status": 4,
+              "details": {
+                "rubric_scores": null,
+                "token_usage_details": null
+              }
+            },
+            {
+              "metric_name": "inference_call_count_v1",
+              "threshold": null,
+              "criterion": null,
+              "custom_function_path": null,
+              "score": 9.0,
+              "eval_status": 4,
+              "details": {
+                "rubric_scores": null,
+                "token_usage_details": null
+              }
+            },
+            {
+              "metric_name": "token_usage_v1",
+              "threshold": null,
+              "criterion": null,
+              "custom_function_path": null,
+              "score": 25596.0,
+              "eval_status": 4,
+              "details": {
+                "rubric_scores": null,
+                "token_usage_details": {
+                  "total_tokens": 25596.0,
+                  "input_tokens": 22806.0,
+                  "prompt_tokens": 22806.0,
+                  "cached_tokens": null,
+                  "tool_use_tokens": null,
+                  "output_tokens": 2790.0,
+                  "candidates_tokens": 548.0,
+                  "reasoning_tokens": 2242.0
+                }
+              }
+            },
+            {
+              "metric_name": "invocation_duration_v1",
+              "threshold": null,
+              "criterion": null,
+              "custom_function_path": null,
+              "score": 54.43,
+              "eval_status": 4,
+              "details": {
+                "rubric_scores": null,
+                "token_usage_details": null
+              }
+            }
+          ]
+        }
+      ],
+      "session_id": "___eval___session___77b3245d-5d22-47ba-820a-9b13d7536122",
+      "session_details": null,
+      "user_id": "user"
+    }
+  ],
+  "creation_timestamp": 1791877315.3189516
+}
